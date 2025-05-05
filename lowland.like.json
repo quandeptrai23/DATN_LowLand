@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "66f6b706c9eb947b4a0d5be0"
+  },
+  "accountId": "0716aa53-9f89-46df-8b4f-9840ebc98866",
+  "likedDate": {
+    "$date": "2024-09-27T13:45:42.376Z"
+  },
+  "blogId": "60e06b49-4f0e-424d-b0ec-3518522ff216",
+  "_class": "com.coffee.lowland.model.Like"
+},
+{
+  "_id": {
+    "$oid": "66fc268262b5b11226add081"
+  },
+  "accountId": "b9fefafa-4711-4e12-91e9-d72dc9aa3624",
+  "likedDate": {
+    "$date": "2024-10-01T16:42:42.570Z"
+  },
+  "blogId": "79a5f2f2-3632-4bf9-b104-f5f098a92e47",
+  "_class": "com.coffee.lowland.model.Like"
+},
+{
+  "_id": {
+    "$oid": "66fc269862b5b11226add084"
+  },
+  "accountId": "b9fefafa-4711-4e12-91e9-d72dc9aa3624",
+  "likedDate": {
+    "$date": "2024-10-01T16:43:04.547Z"
+  },
+  "blogId": "79a5f2f2-3632-4bf9-b104-f5f098a92e47",
+  "commentId": {
+    "$oid": "66fc269562b5b11226add083"
+  },
+  "parentsId": {
+    "$oid": "66fc269562b5b11226add083"
+  },
+  "_class": "com.coffee.lowland.model.Like"
+}]

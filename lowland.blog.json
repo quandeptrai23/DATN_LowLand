@@ -1,0 +1,704 @@
+[{
+  "_id": {
+    "$oid": "66ef95a506c4727428421a64"
+  },
+  "blogId": "41a0094c-b284-4f58-ae01-5d27e5df9472",
+  "accountId": "0716aa53-9f89-46df-8b4f-9840ebc98866",
+  "views": {
+    "$numberLong": "10"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1726977434/t7gi42kscuhjb3fmbpm0.jpg",
+  "isActive": true,
+  "title": "ngon roi ",
+  "date": {
+    "$date": "2024-09-22T03:57:25.740Z"
+  },
+  "description": "oklala",
+  "content": [
+    {
+      "type": "h2",
+      "data": "1.Est tenetur eos."
+    },
+    {
+      "type": "p",
+      "data": "Eum aliquid aliquam qui sit mollitia sit. Ut possimus in autem omnis dicta eum velit. Architecto voluptate doloribus corrupti doloremque aspernatur fuga in."
+    },
+    {
+      "type": "h3",
+      "data": "1.1.Nam autem modi maiores nesciunt."
+    },
+    {
+      "type": "p",
+      "data": "Asperiores in eos beatae sed. Expedita quia minus sed. Assumenda ab odit. Quae aut animi doloribus. Assumenda ut non sed tenetur qui nisi recusandae. Magnam molestiae voluptatibus vitae delectus doloremque."
+    },
+    {
+      "type": "link",
+      "data": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+      "type": "link",
+      "data": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "title": "Facebook"
+    },
+    {
+      "type": "motto",
+      "data": "Ex aut mollitia expedita voluptas eaque porro fugit cum dignissimos.\n        Quam fugit libero. Rerum qui placeat ipsum rem delectus ratione\n        consequatur. Incidunt sed nihil qui qui. Deserunt et exercitationem\n        modi aliquam similique non. Quis sint molestiae."
+    },
+    {
+      "type": "h4",
+      "data": "1.1.1 Asperiores in eos beatae sed. Expedita quia minus sed. Assumenda ab\n        odit. Quae aut animi doloribus. Assumenda ut non sed tenetur qui\n        nisi recusandae. Magnam molestiae voluptatibus vitae delectus\n        doloremque."
+    },
+    {
+      "type": "p",
+      "data": "Repudiandae laboriosam at qui quisquam totam. Et nobis est excepturi\n        nulla eum et. Quasi rerum ab similique est explicabo suscipit harum\n        ducimus atque."
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66ef982006c4727428421a67"
+  },
+  "blogId": "db339afb-0fb9-4ae4-ad2c-b6095cbe0b85",
+  "accountId": "0716aa53-9f89-46df-8b4f-9840ebc98866",
+  "views": {
+    "$numberLong": "5"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1726978077/fjrcyfanesnfwhcq37bb.jpg",
+  "isActive": true,
+  "title": "quan dep trai",
+  "date": {
+    "$date": "2024-09-22T04:08:00.222Z"
+  },
+  "description": "ngon roi",
+  "content": [
+    {
+      "type": "h2",
+      "data": "1.1 How to dep trai"
+    },
+    {
+      "type": "p",
+      "data": "Khum chi dau",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1726978077/fjrcyfanesnfwhcq37bb.jpg",
+      "title": "ngon"
+    },
+    {
+      "type": "link",
+      "data": "https://ngon.uk",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f15ef828cbc95fccefa28f"
+  },
+  "blogId": "b8f6e573-77b0-4299-9529-39dc54657a26",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Store stories",
+  "views": {
+    "$numberLong": "26"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727094514/p5hibgjztheh9evggmez.jpg",
+  "isActive": true,
+  "title": " Lowland: Where Coffee and Community Meet",
+  "date": {
+    "$date": "2024-09-23T12:28:40.357Z"
+  },
+  "description": "In a world that’s always rushing, Lowland Coffee Shop stands as a calm oasis, offering more than just coffee—it’s a place to connect, unwind, and rediscover the beauty in slowing down. Established with a vision to blend great coffee with a strong sense of community, Lowland has quickly become a favorite neighborhood spot.",
+  "content": [
+    {
+      "type": "h2",
+      "data": "1. The Vision Behind Lowland"
+    },
+    {
+      "type": "p",
+      "data": "The idea for Lowland was inspired by a love for both coffee and people. The founders believed that coffee is more than a beverage; it’s a conversation starter, a companion for thoughtful moments, and a reason to gather. Lowland was created to provide a space where everyone—from early-morning commuters to late-afternoon thinkers—could find comfort, connection, and inspiration.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727094518/vfev3bdj4eoswtxxwr9n.webp",
+      "title": "love for both coffee and people"
+    },
+    {
+      "type": "p",
+      "data": "The name “Lowland” was chosen to evoke a sense of calm, a reminder that sometimes, the simplest places can be the most grounding. It reflects the shop’s philosophy of providing a peaceful retreat in the midst of life’s noise.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h2",
+      "data": "2. The Art of Crafting Coffee",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "At Lowland, coffee is taken seriously—but with a lighthearted approach. Each cup is crafted with precision and care, using beans sourced from small, ethically-run farms. The team at Lowland works closely with their suppliers, ensuring that every bean is harvested with sustainability in mind. This not only supports the farming communities but also delivers a cup that’s rich in flavor and story.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "Lowland’s menu offers a balance of classic coffeehouse staples and unique creations. For the traditionalists, there’s the expertly brewed drip coffee and smooth espresso. But for those seeking something different, Lowland's baristas love to experiment with flavors—think honey lavender lattes or vanilla bean cold brew.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "And it’s not just about the coffee. Lowland also serves freshly baked pastries, wholesome breakfast options, and indulgent desserts, each designed to complement your drink of choice. From flaky croissants to locally sourced granola bowls, the food at Lowland is made with the same dedication as the coffee.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h2",
+      "data": "3. A Space for Everyone",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "Beyond the coffee, Lowland has become known for its inviting atmosphere. The interior is a cozy mix of rustic charm and modern touches, with comfy seating, large windows, and an abundance of natural light. Whether you’re looking to catch up with a friend, read a book, or get some work done, Lowland’s space adapts to every need.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "motto",
+      "data": "The café is also a hub for the creative community. Local artists often display their work on the walls, while poets and musicians share their talents during evening events. It’s a space where creativity thrives and connections are formed.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h2",
+      "data": "4. Building Community One Cup at a Time",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "What truly sets Lowland apart is its commitment to the community. It’s a place where regulars are greeted by name, and newcomers are welcomed with warmth. The café hosts regular workshops, from latte art classes to coffee brewing tutorials, as well as community events like open mic nights and charity fundraisers.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "For the team at Lowland, it’s about creating more than just a place to grab coffee. It’s about fostering a sense of belonging, where every visit feels like a return to something familiar.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "link",
+      "data": "https://lowland.site/products",
+      "title": "Find out our products now!"
+    },
+    {
+      "type": "link",
+      "data": "https://lowland.site/products",
+      "title": ""
+    },
+    {
+      "type": "h2",
+      "data": "5. The Future of Lowland",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "As Lowland continues to evolve, the focus remains on the same core values: great coffee, a welcoming atmosphere, and a dedication to community. With plans to expand its menu, host more events, and further deepen its roots in the neighborhood, Lowland is ready to continue growing with its customers.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727094520/b0g3ytwixencgpqxulfg.webp",
+      "title": "Future of Lowland"
+    },
+    {
+      "type": "p",
+      "data": "Whether you’re looking for a quick caffeine fix or a place to relax, Lowland is more than just a coffee shop—it’s a destination, a community, and a reminder that sometimes, the best moments in life are shared over a cup of coffee.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "link",
+      "data": "https://lowland.site",
+      "title": ""
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f16b66e69849657b8c37b4"
+  },
+  "blogId": "4f4d63f4-b6a6-4e62-acd2-4560027b20dd",
+  "accountId": "0716aa53-9f89-46df-8b4f-9840ebc98866",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "0"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727097701/srwysacb1glz9vcv9cmm.webp",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-23T13:21:42.177Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f2823ee254a95e1a63b756"
+  },
+  "blogId": "711ee439-cfc4-414e-b46c-fa49917185bb",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Store stories",
+  "views": {
+    "$numberLong": "3"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727169074/wi7bbpjcr2tutsdg4phq.jpg",
+  "isActive": true,
+  "title": "Discovering the Magic of Lowland Coffee Shop",
+  "date": {
+    "$date": "2024-09-24T09:11:26.117Z"
+  },
+  "description": "Lowland Coffee Shop isn’t just a place to grab your daily caffeine fix—it’s a destination where every cup tells a story, and every visit feels like coming home. With its laid-back vibe, carefully crafted coffee, and commitment to community, Lowland has become more than just a café—it’s a gathering place where magic happens, one brew at a time.",
+  "content": [
+    {
+      "type": "h2",
+      "data": "1. From Bean to Brew"
+    },
+    {
+      "type": "p",
+      "data": "At Lowland, coffee is an art form. Sourcing beans from small, sustainable farms, the team is dedicated to finding the highest quality beans while supporting ethical practices. Every cup brewed at Lowland reflects this dedication—from the moment the beans are ground to the final pour into your cup.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727169079/vhwdvf79gzdamjzbnwno.jpg",
+      "title": "coffee is an art form"
+    },
+    {
+      "type": "p",
+      "data": "Whether you’re a coffee connoisseur or a casual sipper, there’s something for everyone. Lowland’s signature house blend, a smooth and balanced coffee with hints of caramel and cocoa, is a crowd favorite. For the adventurous, seasonal specials like the salted caramel cold brew or a spicy chai latte add an exciting twist to your coffee experience.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h2",
+      "data": "2. A Space to Connect",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "What sets Lowland apart is its unique ability to make you feel like part of a community the moment you walk through the door. With comfortable seating, a warm atmosphere, and friendly staff who know regulars by name, it’s a place where you’re encouraged to sit back, relax, and take a break from the rush of everyday life.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727169081/j4pm38rj0irjzewhcchu.jpg",
+      "title": "Space to Connect"
+    },
+    {
+      "type": "p",
+      "data": "Whether you’re meeting a friend for a chat, working on a project, or just taking a moment for yourself, Lowland has created a space that welcomes everyone. Local artists showcase their work on the walls, musicians perform acoustic sets, and writers often find inspiration tucked into one of the café’s quiet corners.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "link",
+      "data": "https://maps.app.goo.gl/xuAqFn7SVv3NtYb56",
+      "title": "Find out our new Coffee shop here!"
+    },
+    {
+      "type": "h2",
+      "data": "3. The Perfect Pairing",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "What’s a great cup of coffee without something to nibble on? Lowland offers an array of fresh pastries and homemade treats baked in-house daily. From buttery croissants to decadent brownies, there’s something to satisfy every craving. Lowland even has gluten-free and vegan options, ensuring there’s a bite for everyone.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "And if you’re in the mood for something more substantial, the café also serves a selection of light breakfast and lunch options, like avocado toast or a hearty granola bowl topped with fresh fruit.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "motto",
+      "data": "And if you’re in the mood for something more substantial, the café also serves a selection of light breakfast and lunch options, like avocado toast or a hearty granola bowl topped with fresh fruit. Each dish is prepared with the same care and attention as the coffee, ensuring a perfect pairing every time.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h2",
+      "data": "4. Looking Ahead",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "Lowland Coffee Shop may be young, but it’s already made a lasting impact on its neighborhood. As it grows, the commitment to quality, sustainability, and community remains at the forefront. With new menu items on the horizon and more exciting events planned, Lowland is a place that continues to evolve while staying true to its roots.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "Whether you’re stopping by for a quick coffee to-go or settling in for an afternoon of conversation and creativity, Lowland offers more than just a great brew—it offers an experience, one that leaves you looking forward to your next visit.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "link",
+      "data": "https://lowland.site",
+      "title": ""
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f28727e254a95e1a63b75a"
+  },
+  "blogId": "79a5f2f2-3632-4bf9-b104-f5f098a92e47",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Store stories",
+  "views": {
+    "$numberLong": "29"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727170337/aoutoojejwcihfpxljm5.webp",
+  "isActive": true,
+  "title": "The Journey Behind Lowland: A Coffee Shop with Heart",
+  "date": {
+    "$date": "2024-09-24T09:32:23.572Z"
+  },
+  "description": "Nestled in the heart of the city, Lowland Coffee Shop has quickly become a haven for coffee lovers, casual sippers, and creative souls alike. But the story behind Lowland isn’t just about the aroma of freshly brewed beans or the comfort of a cozy ambiance; it’s about a vision that began with passion, community, and a love for the art of coffee-making.",
+  "content": [
+    {
+      "type": "h2",
+      "data": "1. The Beginning"
+    },
+    {
+      "type": "p",
+      "data": "Lowland was born out of a simple idea: to create a space where people could pause, connect, and savor life’s little moments over a cup of coffee. The name, “Lowland,” reflects both the serene, grounded vibe of the café and the desire to be a peaceful retreat from the hustle and bustle of the city.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "Before opening, the search for the perfect beans led the founders on an adventure across small, ethical farms. These farms, tucked in the highlands and valleys of remote regions, grow coffee in harmony with nature. The journey didn’t just end with tasting coffee; it extended into building relationships with the farmers and ensuring Lowland’s brews were as sustainable as they were delicious.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727170338/v8q9oxpbhedzkuphqvsz.webp",
+      "title": "We are Lowland!"
+    },
+    {
+      "type": "h2",
+      "data": "2. The Coffee Experience",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "Walking into Lowland is an experience for the senses. The rich smell of espresso fills the air, complemented by the warm tones of the café’s wooden furniture and soft lighting. Every detail has been carefully crafted to create an environment that feels like home.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727170341/s4gmmtszhxeb6pywqp1j.png",
+      "title": "Lowland where is like your home!"
+    },
+    {
+      "type": "p",
+      "data": "The coffee menu reflects this same attention to detail. Whether you’re looking for a classic pour-over or an adventurous new blend, there’s something for everyone. The signature brew, Lowland Blend, has a smooth yet bold flavor, combining chocolatey undertones with a subtle hint of fruitiness. For those who prefer something a little different, Lowland’s creative seasonal drinks, like the spiced maple latte or cold brew infused with hints of lavender, offer a delightful twist on tradition.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h2",
+      "data": "3. Looking Forward",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "As Lowland continues to grow, the mission remains the same: to provide great coffee in an environment where people feel welcome and cared for. ",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "motto",
+      "data": "The journey has only just begun, but Lowland is already well on its way to becoming a beloved fixture in the neighborhood, where every cup is brewed with love, and every guest is treated like family.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "So next time you’re nearby, stop by Lowland for a cup of coffee that’s more than just a drink—it’s part of a story that’s still being written, one brew at a time.",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "link",
+      "data": "https://maps.app.goo.gl/xuAqFn7SVv3NtYb56",
+      "title": "Visit our store here"
+    },
+    {
+      "type": "link",
+      "data": "https://lowland.site",
+      "title": ""
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f53195cdc5ea22733e7334"
+  },
+  "blogId": "f076831d-0d78-4fe3-a97f-4ddd6ae33063",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "2"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727345003/hbxzhyqag6fnfxjuono9.webp",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T10:04:05.109Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f534cbe088357e81bae8a7"
+  },
+  "blogId": "c4e59534-286a-4bc1-a635-f79498af9041",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "0"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727345735/xhbh5wglahrfqac9m7qp.jpg",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T10:16:52.256Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f543c037ccb2014ffa8aae"
+  },
+  "blogId": "d07fcc9e-50ab-49b9-92ff-c4bc8b89569d",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "5"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727349580/q8plnlqwp0lkxjai4utc.webp",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T11:20:18.437Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727349582/zd8rjfxmxpozjijw8pco.jpg",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f5468dbc2cca43d350e938"
+  },
+  "blogId": "bc1a7f29-72a4-489f-8117-8c542dcac186",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "3"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727350382/jpbpyaamonmy98cdf7ph.webp",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T11:33:33.752Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727350382/jpbpyaamonmy98cdf7ph.webp",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f56c4e2d96362e54c3abfc"
+  },
+  "blogId": "29677adb-42cd-4e5d-bd42-081826121901",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "5"
+  },
+  "imageURL": "https://png.pngtree.com/png-vector/20240623/ourmid/pngtree-flying-cup-of-coffee-with-splash-and-png-image_12831547.png",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T14:14:38.261Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727360076/ajozyd2otbd9zr8ps1g4.webp",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f56d0b2d96362e54c3abfe"
+  },
+  "blogId": "776e69ac-2e59-4baa-9482-26689f4a4bd9",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "2"
+  },
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/52/Deus_Coffee.png",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T14:17:47.456Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    },
+    {
+      "type": "img",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727360265/j9exghzbgj3jcvipinld.webp",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f56dd52d96362e54c3ac00"
+  },
+  "blogId": "abae4e8d-0a7e-4141-8bed-c5c626b1a277",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Life style",
+  "views": {
+    "$numberLong": "1"
+  },
+  "imageURL": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727360468/nrnqklgak1xg4of36a3n.webp",
+  "isActive": true,
+  "title": "123",
+  "date": {
+    "$date": "2024-09-26T14:21:09.531Z"
+  },
+  "description": "123",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    },
+    {
+      "type": "img",
+      "data": "https://png.pngtree.com/png-clipart/20230927/original/pngtree-a-cup-of-coffee-with-coffee-beans-png-image_13002649.png",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "https://free.vector6.com/wp-content/uploads/2021/05/PNG-0000001802-png-do-uong-highland-coffee.png",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+},
+{
+  "_id": {
+    "$oid": "66f56e312d96362e54c3ac02"
+  },
+  "blogId": "60e06b49-4f0e-424d-b0ec-3518522ff216",
+  "accountId": "16c1ef85-7e6c-4c86-ae9f-67db078df256",
+  "categoryName": "Mugs",
+  "views": {
+    "$numberLong": "57"
+  },
+  "imageURL": "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8xOV9waG90b19zaWRlX3ZpZXdfb2ZfYV9pY2VfbGF0dGVfaW5fcGxhc3RpY19jdV82YmE4NDBhYy04YTM1LTQxMjQtOWVmOC1iYjE0NzE4MGVmM2MucG5n.png",
+  "isActive": true,
+  "title": "lowland nhe ba con",
+  "date": {
+    "$date": "2024-09-26T14:22:41.210Z"
+  },
+  "lastUpdate": {
+    "$date": "2024-09-26T14:47:16.501Z"
+  },
+  "updatedBy": "lowland",
+  "description": "ngonnnnnnnnn",
+  "content": [
+    {
+      "type": "h2",
+      "data": "Click here to add content"
+    },
+    {
+      "type": "img",
+      "data": "http://res.cloudinary.com/dqh3nmtam/image/upload/v1727362034/odeeckrstsupplxzte61.webp",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "h1",
+      "data": "Ngon",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "p",
+      "data": "dsadsadsadacxz",
+      "title": "Click here to add title"
+    },
+    {
+      "type": "img",
+      "data": "https://i.pinimg.com/originals/bb/6b/9b/bb6b9b0234b35d6fa42c57b3c8e8e93b.jpg",
+      "title": "Ngon roi"
+    },
+    {
+      "type": "motto",
+      "data": "Ok lala",
+      "title": "Click here to add title"
+    }
+  ],
+  "_class": "com.coffee.lowland.model.Blog"
+}]

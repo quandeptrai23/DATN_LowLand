@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "66f15ab528cbc95fccefa289"
+  },
+  "name": "Store stories",
+  "_class": "com.coffee.lowland.model.Category"
+},
+{
+  "_id": {
+    "$oid": "66f16b66e69849657b8c37b3"
+  },
+  "name": "Life style",
+  "_class": "com.coffee.lowland.model.Category"
+},
+{
+  "_id": {
+    "$oid": "66f573f1ab0a850e6ae7e7ee"
+  },
+  "name": "Mugs",
+  "_class": "com.coffee.lowland.model.Category"
+}]
