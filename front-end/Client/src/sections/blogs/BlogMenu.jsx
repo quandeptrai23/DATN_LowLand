@@ -105,10 +105,7 @@ const Authors = () => {
   return (
     <Box>
       <SectionTitleB>Authors</SectionTitleB>
-      <Category imgURL={"/static/images/logo.jpg"}>Vu Minh Quan</Category>
       <Category imgURL={"/static/images/logo.jpg"}>Nguyen Anh Quan</Category>
-      <Category imgURL={"/static/images/logo.jpg"}>Le Minh Khoi</Category>
-      <Category imgURL={"/static/images/logo.jpg"}>Ha Van Sang</Category>
     </Box>
   );
 };

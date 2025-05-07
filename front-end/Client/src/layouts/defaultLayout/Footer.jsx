@@ -142,7 +142,7 @@ const ContactFooter = () => {
       </Grid>
 
       <Divider sx={{ margin: "10px 0px" }} />
-      <Typography sx={{ textAlign: "center", margin: "20px" }}>
+      {/* <Typography sx={{ textAlign: "center", margin: "20px" }}>
         Powered by{" "}
         <Typography
           sx={{ color: "var(--secondary-color)" }}
@@ -151,7 +151,7 @@ const ContactFooter = () => {
         >
           Group 8
         </Typography>
-      </Typography>
+      </Typography> */}
     </Container>
   );
 };
