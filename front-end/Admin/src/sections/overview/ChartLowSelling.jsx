@@ -36,7 +36,7 @@ export default function ChartLowSelling({
       y: {
         formatter: (value) => {
           if (typeof value !== "undefined") {
-            return `${value.toLocaleString()} Product`;
+            return `${value.toLocaleString()} Sản phẩm`;
           }
           return value;
         },

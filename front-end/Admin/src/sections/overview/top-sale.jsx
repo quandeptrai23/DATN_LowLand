@@ -14,12 +14,12 @@ const TopSale = () => {
     <Box sx={{ mt: 3 }}>
       {topSale && (
         <AppWebsiteVisits
-          title="Top Best-Selling Product"
+          title="Sản phẩm bán chạy nhất"
           chart={{
             labels: topSale.map((item) => item.productName || "N/A"),
             series: [
               {
-                name: "Total",
+                name: "Tổng",
                 type: "column",
                 fill: "solid",
                 data: topSale.map((item) => item.quantity || 0),

@@ -62,7 +62,7 @@ export default function ChartTotalMoney({
         subheader={`${subheader}`}
         action={
           <Box component="span" sx={{ fontWeight: "bold" }}>
-            Total : {totalValue.toLocaleString()} {unit ? unit : "VNĐ"}
+            Tổng : {totalValue.toLocaleString()} {unit ? unit : "VNĐ"}
           </Box>
         }
       />

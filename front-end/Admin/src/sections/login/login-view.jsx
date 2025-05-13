@@ -59,12 +59,12 @@ export default function LoginView() {
             jwtDecode(accessToken).scope !== "ADMIN" &&
             jwtDecode(accessToken).scope !== "EMPLOYEE"
           ) {
-            toast.error("You are not able to login with this account");
+            toast.error("Bạn không thể đăng nhập bằng tài khoản này");
             return;
           }
           dispatch(UserManagerSlice.actions.setUser(res));
           router.replace("/dashboard");
-          toast.success("Login success!");
+          toast.success("Đăng nhập thành công!");
         },
       }
     );
@@ -93,7 +93,7 @@ export default function LoginView() {
           error={attempt && userName === ""}
           disabled={isLogining}
           helperText={
-            attempt && userName === "" ? "Please enter your username" : ""
+            attempt && userName === "" ? "Hãy nhập tên đăng nhập" : ""
           }
           autoComplete="username"
           onChange={(e) => setUserName(e.target.value)}
@@ -106,7 +106,7 @@ export default function LoginView() {
           error={attempt && passWord === ""}
           disabled={isLogining}
           helperText={
-            attempt && passWord === "" ? "Please enter your password" : ""
+            attempt && passWord === "" ? "Hãy nhập mật khẩu" : ""
           }
           value={passWord}
           onChange={(e) => setPassWord(e.target.value)}
@@ -136,7 +136,7 @@ export default function LoginView() {
           loading={isLogining}
           sx={{ mt: 3 }}
         >
-          Login
+          Đăng nhập
         </LoadingButton>
       </Stack>
     </>
@@ -164,15 +164,16 @@ export default function LoginView() {
             maxWidth: 420,
           }}
         >
-          <Typography variant="h4">Sign in to Lowland Admin</Typography>
+          <Typography variant="h4">Đăng nhập vào Lowland Admin
+          </Typography>
 
           <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
-            Lowland administrator for our shop
+           Người quản lý Lowland cho cửa hàng của chúng tôi
           </Typography>
 
           <Divider sx={{ my: 3 }}>
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Signin
+              Đăng nhập
             </Typography>
           </Divider>
 

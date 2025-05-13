@@ -38,7 +38,7 @@ const Revenue = () => {
     <Stack>
       <Box sx={{ display: "flex", gap: 2, mb: 5 }}>
         <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel>Month</InputLabel>
+          <InputLabel>Tháng</InputLabel>
           <Select value={month} onChange={handleMonthChange}>
             {[...Array(12).keys()].map((index) => (
               <MenuItem key={index + 1} value={(index + 1).toString()}>
@@ -48,7 +48,7 @@ const Revenue = () => {
           </Select>
         </FormControl>
         <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel>Year</InputLabel>
+          <InputLabel>Năm</InputLabel>
           <Select value={year} onChange={handleYearChange}>
             {Array.from({ length: 3 }, (_, index) => {
               const currentYear = new Date().getFullYear();
@@ -66,21 +66,21 @@ const Revenue = () => {
       <Box>
         {totalMoneyInMonth ? (
           <ChartTotalMoney
-            title="Monthly Revenue"
-            subheader="Daily Revenue for the Month"
+            title="Doanh thu hàng tháng"
+            subheader="Doanh thu hàng ngày trong tháng"
             chart={{
               labels: totalMoneyInMonth?.map((item) =>
                 item.dayInMonth ? item.dayInMonth.toString() : "N/A"
               ),
               series: [
                 {
-                  name: "Revenue",
+                  name: "Doanh thu",
                   type: "column",
                   fill: "solid",
                   data: totalMoneyInMonth?.map((item) => item.totalMoney || 0),
                 },
                 {
-                  name: "Orders",
+                  name: "Đơn đặt hàng",
                   type: "column",
                   fill: "solid",
                   data: totalMoneyInMonth?.map((item) => item.totalOrders || 0),

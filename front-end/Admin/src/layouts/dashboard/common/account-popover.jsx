@@ -26,7 +26,7 @@ const MENU_OPTIONS = [
     linkTo: "/dashboard",
   },
   {
-    label: "Profile",
+    label: "Thông tin",
     icon: "eva:person-fill",
     linkTo: "/profile",
   },
@@ -56,7 +56,7 @@ export default function AccountPopover() {
     logout(null, {
       onSuccess: () => {
         dispatch(UserManagerSlice.actions.removeUser());
-        toast.success("Logout successfully");
+        toast.success("Đăng xuất thành công");
       },
     });
   };
@@ -141,7 +141,7 @@ export default function AccountPopover() {
           onClick={handleLogout}
           sx={{ typography: "body2", color: "error.main", py: 1.5 }}
         >
-          Logout
+          Đăng xuất
         </MenuItem>
       </Popover>
       <LoadingComp isLoading={isPending} />

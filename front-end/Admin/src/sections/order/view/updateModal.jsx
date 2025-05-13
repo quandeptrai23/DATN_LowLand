@@ -43,19 +43,19 @@ const ProductTable = ({ products }) => {
         >
           <TableRow>
             <TableCell align="center" colSpan={4}>
-              Products
+              Sản phẩm
             </TableCell>
             <TableCell align="center" colSpan={2}>
-              Details
+              Chi tiết
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell align="center">Image</TableCell>
-            <TableCell align="left">Name</TableCell>
+            <TableCell align="center">Hình ảnh</TableCell>
+            <TableCell align="left">Tên</TableCell>
             <TableCell align="left">Size</TableCell>
-            <TableCell align="left">Price</TableCell>
-            <TableCell align="left">Quantity</TableCell>
-            <TableCell align="left">Total</TableCell>
+            <TableCell align="left">Giá</TableCell>
+            <TableCell align="left">Số lượng</TableCell>
+            <TableCell align="left">Tổng</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -143,7 +143,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
   const handleSubmit = () => {
     updateOrder(order, {
       onSuccess: () => {
-        toast.success("Update success");
+        toast.success("Cập nhật thành công");
         refetchOrder();
         refetch();
       },
@@ -155,14 +155,14 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
       {order && (
         <>
           <LoadingComp isLoading={isCreatePaymentLink || isUpdateOrder} />
-          <DialogTitle>Order #{order.orderCode}</DialogTitle>
+          <DialogTitle>Đơn đặt hàng #{order.orderCode}</DialogTitle>
           <DialogContent>
             <Grid container spacing={2}>
               <Grid item sx={{ width: "100%" }} md={6}>
                 <TextField
                   margin="dense"
                   name="customerName"
-                  label="Customer Name"
+                  label="Tên khách hàng"
                   fullWidth
                   value={order.customerName || ""}
                   disabled={
@@ -178,7 +178,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                 <TextField
                   margin="dense"
                   name="phoneNumber"
-                  label="Phone Number"
+                  label="Số điện thoại"
                   fullWidth
                   value={order.phoneNumber || ""}
                   disabled={
@@ -193,7 +193,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
             <TextField
               margin="dense"
               name="address"
-              label="Address"
+              label="Địa chỉ"
               fullWidth
               value={order.address || ""}
               disabled={orderDetails.status === 3 || orderDetails.status === 2}
@@ -202,7 +202,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
             <TextField
               margin="dense"
               name="message"
-              label="Message"
+              label="Ghi chú"
               fullWidth
               value={order.message || ""}
               disabled={orderDetails.status === 3 || orderDetails.status === 2}
@@ -216,7 +216,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                 <TextField
                   margin="dense"
                   name="createdDate"
-                  label="Created Date"
+                  label="Ngày tạo"
                   fullWidth
                   value={order.createdDate || ""}
                   disabled
@@ -227,7 +227,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                 <TextField
                   margin="dense"
                   name="createdBy"
-                  label="Created By"
+                  label="Được tạo bởi"
                   fullWidth
                   value={order.createdBy || ""}
                   disabled
@@ -244,7 +244,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   <InputLabel
                     sx={{ backgroundColor: "white", borderRadius: "8px" }}
                   >
-                    Status
+                    Trạng thái
                   </InputLabel>
                   <Select
                     value={order.status}
@@ -261,7 +261,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                       backgroundColor: `${orderStatus[order.status].color}`,
                       color: "white !important",
                     }}
-                    label="Status"
+                    label="Trạng thái"
                   >
                     <MenuItem value={0}>Waiting</MenuItem>
                     <MenuItem value={1}>Paid</MenuItem>
@@ -275,7 +275,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                 <TextField
                   margin="dense"
                   name="updatedDate"
-                  label="Updated Date"
+                  label="Ngày cập nhật"
                   fullWidth
                   value={order.updatedDate || ""}
                   disabled
@@ -286,7 +286,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                 <TextField
                   margin="dense"
                   name="updatedBy"
-                  label="Updated by"
+                  label="Cập nhật bởi"
                   fullWidth
                   value={order.updatedBy || ""}
                   disabled
@@ -299,7 +299,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
             <TextField
               margin="dense"
               name="note"
-              label="Note"
+              label="Ghi chú"
               fullWidth
               value={order.note || ""}
               disabled={orderDetails.status === 3 || orderDetails.status === 2}
@@ -309,7 +309,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
             <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
               <Box sx={{ mt: 2, px: 2 }}>
                 <Typography variant="h6" textAlign={"right"} fontWeight={500}>
-                  Subtotal:{" "}
+                  Tổng phí:{" "}
                   <span style={{ marginLeft: "40px" }}>
                     {formatPrice(caculateTotal())} VNĐ
                   </span>
@@ -340,7 +340,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                     onClick={handlePay}
                     color="success"
                   >
-                    Payment link
+                    Link thanh toán
                   </Button>
                 </Box>
               </Box>
@@ -356,7 +356,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
               variant="contained"
               color="primary"
             >
-              Cancel
+              Hủy
             </Button>
             <Button
               onClick={handleSubmit}
@@ -365,7 +365,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
               sx={{ color: "white" }}
               disabled={orderDetails.status === 3 || orderDetails.status === 2}
             >
-              Update
+              Cập nhật
             </Button>
           </DialogActions>
         </>

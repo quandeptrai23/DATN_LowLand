@@ -79,13 +79,13 @@ const MaterialDialog = ({
   return (
     <Dialog open={open} onClose={handleClose}>
       <LoadingComp isLoading={isUpdating} />
-      <DialogTitle>Detail material</DialogTitle>
+      <DialogTitle>Chi tiết nguyên liệu</DialogTitle>
       <DialogContent>
         <Box sx={{ p: 3, minHeight: 200 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <TextField
-                label="Material Name"
+                label="Tên nguyên liệu"
                 value={data.materialName}
                 onChange={(e) =>
                   setData({ ...data, materialName: e.target.value })
@@ -95,7 +95,7 @@ const MaterialDialog = ({
             </Grid>
             <Grid item xs={12} sm={6}>
               <CustomAutocomplete
-                label="Unit Name"
+                label="Đơn vị"
                 current={material?.[0]?.unitName}
                 onInputChange={({ value }) =>
                   setData({ ...data, unitName: value })
@@ -107,7 +107,7 @@ const MaterialDialog = ({
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                label="Quantity"
+                label="Số lượng"
                 value={data.quantity}
                 type="number"
                 disabled
@@ -116,7 +116,7 @@ const MaterialDialog = ({
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                label="Min Quantity"
+                label="Số lượng min"
                 value={data.minQuantity}
                 onChange={(e) =>
                   setData({ ...data, minQuantity: e.target.value })

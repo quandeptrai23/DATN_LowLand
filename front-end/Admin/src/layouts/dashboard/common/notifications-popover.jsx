@@ -123,9 +123,9 @@ export default function NotificationsPopover() {
       >
         <Box sx={{ display: "flex", alignItems: "center", py: 2, px: 2.5 }}>
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="subtitle1">Notifications</Typography>
+            <Typography variant="subtitle1">Thông báo</Typography>
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              You have {totalUnRead} unread messages
+             Bạn có {totalUnRead} tin nhắn chưa đọc
             </Typography>
           </Box>
 
@@ -148,7 +148,7 @@ export default function NotificationsPopover() {
                 disableSticky
                 sx={{ py: 1, px: 2.5, typography: "overline" }}
               >
-                New
+                Tin tức
               </ListSubheader>
             }
           >
@@ -167,7 +167,7 @@ export default function NotificationsPopover() {
                 disableSticky
                 sx={{ py: 1, px: 2.5, typography: "overline" }}
               >
-                Before that
+                Trước đó
               </ListSubheader>
             }
           >
@@ -184,7 +184,7 @@ export default function NotificationsPopover() {
 
         <Box sx={{ p: 1 }}>
           <Button fullWidth disableRipple>
-            View All
+            Xem tất cả
           </Button>
         </Box>
       </Popover>

@@ -94,9 +94,9 @@ const WebTraffic = () => {
       <Box>
         {totalAccessHistories ? (
           <ChartTotalMoney
-            title="Web traffic"
-            subheader="Daily Web traffic for the Month or the Year"
-            unit="visitors"
+            title="Lượng truy cập"
+            subheader="Lượng truy cập website trong ngày của tháng hoặc năm"
+            unit="khách"
             chart={{
               labels: totalAccessHistories.map((item) =>
                 item.date ? item.date.toString() : "N/A"
@@ -133,7 +133,7 @@ const WebTraffic = () => {
             sx={{ height: "100%", py: 2 }}
             color="secondary"
           >
-            Search
+            Tìm kiếm
           </Button>
         </Box>
         <Box

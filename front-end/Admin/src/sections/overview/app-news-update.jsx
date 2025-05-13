@@ -37,7 +37,7 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
           color="inherit"
           endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
         >
-          View all
+         Xem tất cả
         </Button>
       </Box>
     </Card>

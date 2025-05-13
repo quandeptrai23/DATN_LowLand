@@ -93,12 +93,12 @@ export default function UserTableRow({
       >
         <MenuItem onClick={onEditClick}>
           <Iconify icon="eva:edit-fill" sx={{ mr: 2 }} />
-          Edit
+          Sửa
         </MenuItem>
 
         <MenuItem onClick={onDeleteClick} sx={{ color: "error.main" }}>
           <Iconify icon="eva:trash-2-outline" sx={{ mr: 2 }} />
-          Delete
+          Xóa
         </MenuItem>
       </Popover>
     </>

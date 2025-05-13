@@ -28,27 +28,27 @@ const Stuff = () => {
     >
       {[
         {
-          title: "Customers",
+          title: "Khách hàng",
           total: stuffs?.customer,
           icon: <Person fontSize="large" />,
         },
         {
-          title: "Orders in month",
+          title: "Đơn đặt hàng trong tháng",
           total: stuffs?.orderInMonth,
           icon: <AlignHorizontalRightOutlined fontSize="large" />,
         },
         {
-          title: "Products",
+          title: "Sản phẩm",
           total: stuffs?.product,
           icon: <WrapText fontSize="large" />,
         },
         {
-          title: "Product types",
+          title: "Loại sản phẩm",
           total: stuffs?.productType,
           icon: <AddShoppingCart fontSize="large" />,
         },
         {
-          title: "Materials",
+          title: "Nguyên liệu",
           total: stuffs?.material,
           icon: <GridView fontSize="large" />,
         },

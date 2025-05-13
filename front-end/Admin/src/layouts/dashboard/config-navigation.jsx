@@ -11,32 +11,32 @@ const icon = (name) => (
 
 const navConfig = [
   {
-    title: "dashboard",
+    title: "Trang chủ",
     path: "/dashboard",
     icon: icon("ic_analytics"),
   },
   {
-    title: "user",
+    title: "Tài khoản",
     path: "/users",
     icon: icon("ic_user"),
   },
   {
-    title: "product",
+    title: "Sản phẩm",
     path: "/products",
     icon: icon("ic_cart"),
   },
   {
-    title: "blog",
+    title: "Blog",
     path: "/blogs",
     icon: icon("ic_blog"),
   },
   {
-    title: "order",
+    title: "Đơn đặt hàng",
     path: "/orders",
     icon: icon("ic_order"),
   },
   {
-    title: "material",
+    title: "Nguyên liệu",
     path: "/materials",
     icon: icon("ic_import"),
   },

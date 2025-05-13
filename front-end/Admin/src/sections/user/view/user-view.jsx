@@ -200,7 +200,7 @@ export default function UserPage() {
       { accountId: editUserInfo.accountId, params: formData },
       {
         onSuccess: () => {
-          toast.success("Update account successfully");
+          toast.success("Cập nhật tài khoản thành công");
           setOpenEditModal(false);
           setPassword({ value: null, showPassword: false });
           setConfirmPassword({ value: null, showPassword: false });
@@ -246,7 +246,7 @@ export default function UserPage() {
           onClick={() => setOpenAddModal(true)}
           sx={{ mt: { xs: 2, sm: 0 }, width: { xs: "100%", sm: "auto" } }}
         >
-          NEW {tabValue.role}
+          {tabValue.role} mới
         </Button>
       </Card>
 
@@ -281,11 +281,11 @@ export default function UserPage() {
                 headLabel={[
                   { id: "avatarUrl", label: "Avatar" },
                   { id: "email", label: "Email" },
-                  { id: "full_name", label: "Full Name" },
-                  { id: "role", label: "Role" },
-                  { id: "gender", label: "Gender" },
-                  { id: "phone_number", label: "Phone Number" },
-                  { id: "is_active", label: "Status" },
+                  { id: "full_name", label: "Họ và tên" },
+                  { id: "role", label: "Quyền" },
+                  { id: "gender", label: "Giới tính" },
+                  { id: "phone_number", label: "Số điện thoại" },
+                  { id: "is_active", label: "Trạng thái" },
                   { id: "" },
                 ]}
               />
@@ -359,7 +359,7 @@ export default function UserPage() {
               autoFocus
               margin="dense"
               name="fullName"
-              label="Full Name"
+              label="Họ và tên"
               type="text"
               fullWidth
               autoComplete="fullName"
@@ -388,7 +388,7 @@ export default function UserPage() {
                 <TextField
                   name="position"
                   label="
-                Position"
+                Vị trí"
                   type="text"
                   autoComplete="position"
                   fullWidth
@@ -403,7 +403,7 @@ export default function UserPage() {
             <TextField
               margin="dense"
               name="password"
-              label="Password"
+              label="Mật khẩu"
               type="password"
               autoComplete="password"
               fullWidth
@@ -418,7 +418,7 @@ export default function UserPage() {
                 <TextField
                   name="phoneNumber"
                   autoComplete="phoneNumber"
-                  label="Phone Number"
+                  label="Số điện thoại"
                   type="text"
                   fullWidth
                   variant="outlined"
@@ -435,7 +435,7 @@ export default function UserPage() {
                     labelId="demo-simple-select-label2"
                     value={userInfo.gender || 1}
                     name="gender"
-                    label="Gender"
+                    label="Giới tính"
                     autoComplete="gender"
                     onChange={(e) =>
                       setUserInfo({ ...userInfo, gender: e.target.value })
@@ -451,7 +451,7 @@ export default function UserPage() {
               margin="dense"
               name="address"
               autoComplete="address"
-              label="Address"
+              label="Địa chỉ"
               type="text"
               fullWidth
               variant="outlined"
@@ -465,7 +465,7 @@ export default function UserPage() {
               margin="dense"
               name="description"
               autoComplete="description"
-              label="Description"
+              label="Chú thích"
               type="text"
               fullWidth
               variant="outlined"
@@ -477,9 +477,9 @@ export default function UserPage() {
           </DialogContent>
         </form>
         <DialogActions>
-          <Button onClick={() => setOpenAddModal(false)}>Cancel</Button>
+          <Button onClick={() => setOpenAddModal(false)}>Hủy</Button>
           <Button onClick={handleSubmitNewUser} color="primary">
-            Add {tabValue?.role}
+            Thêm {tabValue?.role}
           </Button>
         </DialogActions>
       </Dialog>
@@ -487,14 +487,14 @@ export default function UserPage() {
 
       {/* Edit User Modal */}
       <Dialog open={openEditModal} onClose={() => setOpenEditModal(false)}>
-        <DialogTitle>Edit {tabValue?.role}</DialogTitle>
+        <DialogTitle>Sửa {tabValue?.role}</DialogTitle>
         <form>
           <DialogContent>
             <TextField
               autoFocus
               margin="dense"
               name="fullName"
-              label="Full Name"
+              label="Họ và tên"
               autoComplete="fullName"
               type="text"
               fullWidth
@@ -568,7 +568,7 @@ export default function UserPage() {
               <Grid item md={6} xs={12}>
                 <TextField
                   name="phoneNumber"
-                  label="Phone Number"
+                  label="Số điện thoại"
                   type="text"
                   autoComplete="phoneNumber"
                   fullWidth
@@ -608,7 +608,7 @@ export default function UserPage() {
             <TextField
               margin="dense"
               name="address"
-              label="Address"
+              label="Địa chỉ"
               type="text"
               autoComplete="address"
               fullWidth
@@ -625,7 +625,7 @@ export default function UserPage() {
             <TextField
               margin="dense"
               name="password"
-              label="Password"
+              label="Mật khẩu"
               autoComplete="password"
               type={password.showPassword ? "text" : "password"}
               fullWidth
@@ -638,7 +638,7 @@ export default function UserPage() {
             <TextField
               margin="dense"
               name="confirmPassword"
-              label="Confirm Password"
+              label="Xác nhận mật khẩu"
               autoComplete="confirmPassword"
               type={confirmPassword.showPassword ? "text" : "password"}
               fullWidth
@@ -663,7 +663,7 @@ export default function UserPage() {
             <TextField
               margin="dense"
               name="position"
-              label="Position"
+              label="Vị trí"
               type="text"
               autoComplete="position"
               fullWidth
@@ -680,7 +680,7 @@ export default function UserPage() {
             <TextField
               margin="dense"
               name="description"
-              label="Description"
+              label="Chú thích"
               type="text"
               autoComplete="description"
               fullWidth
@@ -696,9 +696,9 @@ export default function UserPage() {
           </DialogContent>
         </form>
         <DialogActions>
-          <Button onClick={() => setOpenEditModal(false)}>Cancel</Button>
+          <Button onClick={() => setOpenEditModal(false)}>Hủy</Button>
           <Button onClick={handleSubmitEditUser} color="primary">
-            Save Changes
+            Lưu thay đổi
           </Button>
         </DialogActions>
       </Dialog>

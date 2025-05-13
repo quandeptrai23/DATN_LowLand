@@ -48,7 +48,7 @@ const MaterialChart = () => {
           }}
         >
           <Typography variant="h5" sx={{ my: 3, mx: 3 }}>
-            Materials Chart
+            Biểu đồ nguyên liệu
           </Typography>
           <IconButton
             color="primary"
@@ -64,7 +64,7 @@ const MaterialChart = () => {
         <Box sx={{ mx: 2 }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <TextField
-              placeholder="Search material..."
+              placeholder="Tìm kiếm nguyên liệu..."
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);

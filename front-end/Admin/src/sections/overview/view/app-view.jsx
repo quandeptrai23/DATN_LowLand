@@ -16,7 +16,7 @@ export default function AppView() {
   return (
     <Container maxWidth="xl">
       <Typography variant="h4" sx={{ mb: 5 }}>
-        Welcome, {userData.fullName}
+        Chào mừng, {userData.fullName}
       </Typography>
       <Stuff />
       <AppRevenue />
