@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   Box,
   TextField,
@@ -18,22 +18,24 @@ export const CustomAutocomplete = ({
   onInputChange,
   sx,
 }) => {
-  const [value, setValue] = useState(current);
-  useEffect(() => {
-    if (current) {
-      setValue(current);
-    }
-  }, [current]);
+  const [value, setValue] = useState(current || "");
   const [focused, setFocused] = useState(false);
+  const inputRef = useRef(null);
+  
+  // Update value when current prop changes
+  useEffect(() => {
+    setValue(current || "");
+  }, [current]);
 
   // Debounced value to limit API calls
-  const queryDebounced = useDebounce(value, 500);
+  const queryDebounced = useDebounce(value, 300);
 
   // Query for fetching options
   const { data: options = [], isLoading: loading } = useQuery({
     queryKey: ["getOptions", { query: queryDebounced }],
-    queryFn: () => queryFn({ query: queryDebounced, size: 5 }),
-    enabled: focused, // Only run query if there's a value or the field is focused
+    queryFn: () => queryFn({ query: queryDebounced, size: 10 }),
+    enabled: !!focused, // Convert to boolean with !!
+    refetchOnWindowFocus: false,
   });
 
   const handleInputChange = (value) => {
@@ -41,34 +43,54 @@ export const CustomAutocomplete = ({
     onInputChange({
       value: value,
       option: options.find((o) => o[labelKey] === value),
-    }); // Call the callback with the new value
+    });
   };
 
   const handleBlur = () => {
+    // Short delay to allow option click to register before dropdown disappears
     setTimeout(() => {
       setFocused(false);
-    }, 100);
+    }, 150);
+  };
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleDropdownClick = () => {
+    // Toggle dropdown visibility
+    if (focused) {
+      setFocused(false);
+    } else {
+      setFocused(true);
+      // Focus the input to ensure keyboard accessibility
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }
   };
 
   return (
     <Box sx={{ position: "relative" }}>
       <TextField
-        value={value || ""}
+        value={value}
         name={label}
         label={label}
-        autoComplete={"off"}
+        autoComplete="off"
+        inputRef={inputRef}
         sx={{ minWidth: 150, ...sx }}
-        onFocus={() => setFocused(true)} // Show buttons when input is focused
-        onBlur={handleBlur} // Hide buttons when input is blurred
-        onChange={(e) => handleInputChange(e.target.value)} // Update options as user types
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onChange={(e) => handleInputChange(e.target.value)}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              {focused ? (
-                <Iconify icon="fe:drop-up" sx={{ cursor: "pointer" }} />
-              ) : (
-                <Iconify icon="fe:drop-down" sx={{ cursor: "pointer" }} />
-              )}
+              <Box 
+                onClick={handleDropdownClick}
+                sx={{ cursor: "pointer", padding: "8px", display: "flex" }}
+              >
+                <Iconify icon={focused ? "fe:drop-up" : "fe:drop-down"} />
+              </Box>
             </InputAdornment>
           ),
         }}
@@ -88,22 +110,41 @@ export const CustomAutocomplete = ({
             display: "flex",
             flexDirection: "column",
             gap: 1,
+            maxHeight: "250px",
+            overflowY: "auto",
+            border: "1px solid #e0e0e0",
           }}
         >
-          {loading && <CircularProgress size={24} sx={{ m: 1 }} />}
-          {options.map((option, index) => (
-            <Button
-              key={index}
-              variant="contained"
-              sx={{ width: "100%" }}
-              onClick={() => {
-                handleInputChange(option[labelKey] || value);
-                setFocused(false);
-              }}
-            >
-              {option[labelKey]}
-            </Button>
-          ))}
+          {loading ? (
+            <Box sx={{ display: "flex", justifyContent: "center", p: 2 }}>
+              <CircularProgress size={24} />
+            </Box>
+          ) : options.length > 0 ? (
+            options.map((option, index) => (
+              <Button
+                key={index}
+                variant="text"
+                color="primary"
+                sx={{ 
+                  width: "100%", 
+                  justifyContent: "flex-start", 
+                  textAlign: "left",
+                  py: 1,
+                  px: 2
+                }}
+                onClick={() => {
+                  handleInputChange(option[labelKey] || value);
+                  setFocused(false);
+                }}
+              >
+                {option[labelKey]}
+              </Button>
+            ))
+          ) : (
+            <Box sx={{ p: 2, textAlign: "center", color: "text.secondary" }}>
+              Không tìm thấy kết quả
+            </Box>
+          )}
         </Box>
       )}
     </Box>

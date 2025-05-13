@@ -93,18 +93,18 @@ const SizeAndPrice = ({ details, setDetails }) => {
                 <CustomAutocomplete
                   current={sz.sizeName}
                   label={"Size"}
-                  labelKey={"sizeName"}
-                  queryFn={queryFn}
                   sx={{ width: "100%" }}
-                  onInputChange={(val) =>
-                    setDetails((prev) =>
-                      prev.map((item) =>
-                        item.productDetailsId === sz.productDetailsId
-                          ? { ...item, sizeName: val.value }
-                          : item
-                      )
-                    )
-                  }
+                  labelKey={"sizeName"}
+                  queryFn={async () => {
+                    const allSizes = await queryFn();
+                    const selectedSizeNames = details.map((d) => d.sizeName);
+                    return allSizes.filter(
+                      (s) => !selectedSizeNames.includes(s.sizeName)
+                    );
+                  }}
+                  onInputChange={(val) => {
+                    setNewSizeName(val.value);
+                  }}
                 />
               </Grid>
 
