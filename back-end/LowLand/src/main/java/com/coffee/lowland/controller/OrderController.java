@@ -42,12 +42,4 @@ public class OrderController {
                 .result(orderService.approveOrder(orderId, request))
                 .build();
     }
-
-    @PostMapping("/payment-result")
-    public APIResponse<String> handlePaymentResult(@RequestBody Webhook request) throws Exception {
-        return APIResponse.<String>builder()
-                .code(2000)
-                .result(orderService.payResult(request))
-                .build();
-    }
 }
