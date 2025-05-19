@@ -164,11 +164,11 @@ export default function LoginView() {
             maxWidth: 420,
           }}
         >
-          <Typography variant="h4">Đăng nhập vào Lowland Admin
+          <Typography variant="h4">Đăng nhập vào Lowland
           </Typography>
 
           <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
-           Người quản lý Lowland cho cửa hàng của chúng tôi
+           Người quản lý  
           </Typography>
 
           <Divider sx={{ my: 3 }}>

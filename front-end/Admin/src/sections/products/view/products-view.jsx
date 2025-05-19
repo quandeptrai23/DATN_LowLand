@@ -90,7 +90,7 @@ export default function ProductsView() {
   return (
     <Container>
       <Typography variant="h4" sx={{ mb: 5 }}>
-        Products
+        Sản phẩm
       </Typography>
 
       <Card
@@ -159,7 +159,7 @@ export default function ProductsView() {
                 width: { xs: "100%", sm: "auto" },
               }}
             >
-              New product
+             Thêm sản phẩm
             </Button>
           </Grid>
         </Grid>
@@ -277,7 +277,7 @@ export default function ProductsView() {
                       p: 5,
                     }}
                   >
-                    No products found for &quot;{query}&quot;
+                   Không có sản phẩm nào với &quot;{query}&quot;
                   </Typography>
                   <Image
                     imageURL={"/static/images/404.jpg"}

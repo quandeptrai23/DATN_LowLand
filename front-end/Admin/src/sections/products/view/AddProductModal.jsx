@@ -78,7 +78,7 @@ const AddProductModal = ({ open, onClose, refetch }) => {
             flexDirection: "column",
           }}
         >
-          <DialogTitle>Edit Product</DialogTitle>
+          <DialogTitle>Sửa sản phẩm</DialogTitle>
 
           <Tabs
             value={currentTab}
@@ -123,7 +123,7 @@ const AddProductModal = ({ open, onClose, refetch }) => {
               color="primary"
               onClick={handleSaveProduct}
             >
-              Save Changes
+              Lưu thay đổi
             </Button>
           </Box>
         </DialogContent>

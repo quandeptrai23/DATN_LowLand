@@ -758,7 +758,7 @@ const ImportStock = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <Typography variant="subtitle2">Số loại NVL:</Typography>
-                    <Typography>{importItem.materialsList?.length || 0} mục</Typography> 
+                    <Typography>{importItem.materialsList?.split(',')?.length || 0} mục</Typography> 
                 </Grid>
                  {importItem?.updatedDate && (
                     <Grid item xs={12} sm={6}>
