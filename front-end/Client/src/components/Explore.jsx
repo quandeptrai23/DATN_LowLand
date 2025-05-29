@@ -27,7 +27,7 @@ const Explore = ({ show, isHover }) => {
           //transform: hovered ? "none" : "translateY(-20px)",
         }}
       >
-        EXPLORE OUR OFFICES
+        KHÁM PHÁ CỬA HÀNG
       </Button>
     </Box>
   );

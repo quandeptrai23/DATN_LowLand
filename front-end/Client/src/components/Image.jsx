@@ -36,7 +36,7 @@ const Overlay = ({ hovered, overlayContent }) => {
             },
           }}
         >
-          {overlayContent ? overlayContent : "EXPLORE MUGS"}
+          {overlayContent ? overlayContent : "Khám phá"}
         </Button>
       </Box>
     </Box>
