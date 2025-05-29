@@ -10,6 +10,10 @@ const materialAPI = {
     const url = "/materials" + "/" + id;
     return axios.put(url, params);
   },
+  delete: (id) => {
+    const url = "/materials" + "/" + id;
+    return axios.delete(url);
+  },
 };
 
 export default materialAPI;

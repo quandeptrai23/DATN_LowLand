@@ -18,6 +18,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebounce } from "src/hooks/use-debounce";
 import Iconify from "src/components/iconify/iconify";
+import LowStockChart from "./LowStockChart";
 
 const MaterialChart = () => {
   const [pageMaterial, setPageMaterial] = useState(1);
@@ -117,6 +118,8 @@ const MaterialChart = () => {
           <Skeleton variant="rounded" height={300} sx={{ my: 3, mx: 3 }} />
         )}
       </Card>
+
+      <LowStockChart />
     </Box>
   );
 };

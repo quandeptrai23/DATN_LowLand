@@ -45,6 +45,11 @@ const MaterialDialog = ({
     mutationFn: ({ id, data }) => materialAPI.update(id, data),
   });
 
+  const { mutate: deleteMaterial, isPending: isDeleteing } = useMutation({
+    mutationKey: ({ id }) => ["deleteMaterial"],
+    mutationFn: ({ id }) => materialAPI.delete(id),
+  });
+
   useEffect(() => {
     if (material) {
       setData(material[0]);
@@ -69,8 +74,28 @@ const MaterialDialog = ({
       {
         onSuccess: () => {
           handleClose();
-          toast.success("Update material successfully");
+          toast.success("Cập nhật nguyên liệu thành công");
           refetch();
+        },
+      }
+    );
+  };
+
+  const handleDelete = () => {
+    if (!data.materialId) {
+      toast.error("Không tìm thấy ID nguyên liệu");
+      return;
+    }
+    deleteMaterial(
+      { id: data.materialId },
+      {
+        onSuccess: (response) => {
+          handleClose();
+          toast.success("Xóa nguyên liệu thành công");
+          refetch();
+        },
+        onError: (error) => {
+          console.error("Delete error:", error);
         },
       }
     );
@@ -78,7 +103,7 @@ const MaterialDialog = ({
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <LoadingComp isLoading={isUpdating} />
+      <LoadingComp isLoading={isUpdating || isDeleteing} />
       <DialogTitle>Chi tiết nguyên liệu</DialogTitle>
       <DialogContent>
         <Box sx={{ p: 3, minHeight: 200 }}>
@@ -129,9 +154,10 @@ const MaterialDialog = ({
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Close</Button>
+        <Button onClick={handleDelete}>Xóa</Button>
+        {/* <Button onClick={handleClose}>Đóng</Button> */}
         <Button onClick={handleSave} variant="contained">
-          Save
+          Lưu
         </Button>
       </DialogActions>
     </Dialog>
