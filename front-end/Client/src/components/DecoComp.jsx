@@ -9,7 +9,7 @@ const DecoComp = ({ title, desciption, children, sx, space }) => {
         disableGutters
         sx={{
           textAlign: "center",
-          padding: "150px 0px",
+          padding: "100px 0px",
           backgroundColor: "#f0f0f0",
           borderRadius: "10px",
         }}

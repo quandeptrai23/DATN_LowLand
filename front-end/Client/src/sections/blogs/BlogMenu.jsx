@@ -71,7 +71,7 @@ const BlogCategories = ({ categoryName, setCategoryName, setPage }) => {
 
   return (
     <Box>
-      <SectionTitleB>Categories</SectionTitleB>
+      <SectionTitleB>Thể loại</SectionTitleB>
       <Category
         key={"All"}
         onClick={() => {
@@ -79,7 +79,7 @@ const BlogCategories = ({ categoryName, setCategoryName, setPage }) => {
         }}
         active={categoryName === "All"}
       >
-        All
+        Tất cả
       </Category>
       {categories ? (
         categories.map((category) => (
@@ -104,7 +104,7 @@ const BlogCategories = ({ categoryName, setCategoryName, setPage }) => {
 const Authors = () => {
   return (
     <Box>
-      <SectionTitleB>Authors</SectionTitleB>
+      <SectionTitleB>Tác giả</SectionTitleB>
       <Category imgURL={"/static/images/logo.jpg"}>Nguyen Anh Quan</Category>
     </Box>
   );
@@ -120,7 +120,7 @@ const DetailStore = () => {
       </Typography>
       <ButtonLink
         color={"secondary"}
-        ariaLabel={"read the full story"}
+        ariaLabel={"Đọc tất bài viết "}
         sx={{
           textDecoration: "underline",
           "&:hover": {
@@ -129,7 +129,7 @@ const DetailStore = () => {
         }}
         href={"/blogs/79a5f2f2-3632-4bf9-b104-f5f098a92e47"}
       >
-        Read the full story
+        Đọc tất bài viết{" "}
       </ButtonLink>
     </Box>
   );
@@ -173,7 +173,7 @@ export const BlogMenu = ({ authorId }) => {
         sx={{ width: "100%" }}
       >
         <Grid item md={8} xs={12}>
-          <SectionTitleB>Related Blogs</SectionTitleB>
+          <SectionTitleB>Blog liên quan</SectionTitleB>
           {blogsPage ? (
             blogsPage.response.map((blog) => (
               <LineBlog
@@ -198,7 +198,7 @@ export const BlogMenu = ({ authorId }) => {
           </Box>
         </Grid>
         <Grid item md={4}>
-          <SectionTitleB>About Us</SectionTitleB>
+          <SectionTitleB>Về chúng tôi</SectionTitleB>
           <DetailStore />
           <BlogCategories
             categoryName={categoryName}

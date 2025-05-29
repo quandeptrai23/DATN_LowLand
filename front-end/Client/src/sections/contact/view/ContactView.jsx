@@ -174,7 +174,7 @@ const ContactView = () => {
   return (
     <>
       <DecoComp
-        space={200}
+        space={130}
         title={"Kết nối ngay"}
         desciption={
           "Tại LowLand Coffee Shop, chúng tôi tin vào việc nâng cao trải nghiệm cà phê hàng ngày của bạn. Tọa lạc tại trung tâm thành phố, chúng tôi cung cấp nhiều hơn một tách cà phê – chúng tôi cung cấp một bầu không khí ấm áp, hấp dẫn, nơi mỗi ngụm cà phê là một hành trình của hương vị phong phú và kết nối cộng đồng. Hãy đến và tận hưởng khoảnh khắc cùng chúng tôi."

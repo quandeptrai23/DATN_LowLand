@@ -72,7 +72,7 @@ const FeaturedPosts = () => {
         alignItems: "center",
       }}
     >
-      <SectionTitle>Featured Posts</SectionTitle>
+      <SectionTitle>Bài viết nổi bật</SectionTitle>
       <Grid
         container
         spacing={4}

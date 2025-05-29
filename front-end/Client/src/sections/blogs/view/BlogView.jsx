@@ -12,11 +12,11 @@ const BlogsView = () => {
   return (
     <Box sx={{ height: "fit-content" }}>
       <DecoComp
-        space={200}
-        title={"Read coffee stories on our Blog"}
-        desciption={`Step into a world where each sip of coffee is a delightful journey,
-          where flavors dance on your palate and every cup holds the promise of
-          a new adventure, only at our coffee haven.`}
+        space={150}
+        title={"Đọc những câu chuyện về cà phê trên Blog của chúng tôi"}
+        desciption={`Bước vào thế giới mà mỗi ngụm cà phê là một hành trình thú vị,
+nơi hương vị nhảy múa trên vòm miệng và mỗi tách cà phê đều hứa hẹn
+một cuộc phiêu lưu mới, chỉ có tại thiên đường cà phê của chúng tôi.`}
       >
         <FloatInOnScroll>
           <FeaturedPosts />

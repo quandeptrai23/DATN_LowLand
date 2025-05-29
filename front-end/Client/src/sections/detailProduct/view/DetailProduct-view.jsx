@@ -392,7 +392,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
         </Grid>
 
         <Grid container sx={{ opacity: "0.5", my: "50px" }}>
-          <Grid item md={6} xs={12}>
+          <Grid item md={12} xs={12}>
             <Typography sx={{ textTransform: "uppercase" }}>
               Chi tiết
             </Typography>
@@ -430,7 +430,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
               },
             }}
           >
-            <Typography sx={{ textTransform: "uppercase" }}>
+            {/* <Typography sx={{ textTransform: "uppercase" }}>
               Nguyên liệu
             </Typography>
 
@@ -451,7 +451,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                   />
                 ))}
               </List>
-            )}
+            )} */}
           </Grid>
         </Grid>
       </Container>

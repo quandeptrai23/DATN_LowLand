@@ -30,7 +30,7 @@ const ProductImage = ({ sx, imageURL, isSale, unShowOverlay }) => {
             },
           }}
         >
-          On Sale
+          Giảm giá{" "}
         </Button>
       ) : (
         <></>

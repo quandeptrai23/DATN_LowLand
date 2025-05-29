@@ -14,13 +14,13 @@ const AboutView = () => {
   return (
     <>
       <DecoComp
-        space={150}
-        title={"About"}
+        space={80}
+        title={"Thông tin"}
         desciption={
-          "At LowLand Coffee Shop, we believe in elevating your daily coffee experience. Nestled in the heart of the city, we offer more than just a cup of coffee – we offer a warm, inviting atmosphere where every sip is a journey of rich flavors and community connection. Come, savor the moment with us."
+          "Tại LowLand Coffee Shop, chúng tôi tin vào việc nâng cao trải nghiệm cà phê hàng ngày của bạn. Tọa lạc tại trung tâm thành phố, chúng tôi cung cấp nhiều hơn một tách cà phê – chúng tôi cung cấp một bầu không khí ấm áp, hấp dẫn, nơi mỗi ngụm cà phê là một hành trình của hương vị phong phú. Hãy đến và tận hưởng khoảnh khắc cùng chúng tôi."
         }
       >
-        <Container maxWidth="md">
+        <Container maxWidth="md" style={{ marginTop: "10px" }}>
           <Image
             imageURL={"/static/images/aboutBanner.jpg"}
             sx={{ width: "100%", height: "320px", mb: "100px" }}

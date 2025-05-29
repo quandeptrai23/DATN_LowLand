@@ -95,7 +95,7 @@ export const AllArticle = ({ authorId }) => {
 
   return (
     <>
-      <SectionTitleB>All Articles</SectionTitleB>
+      <SectionTitleB>Tất cả các bài viết</SectionTitleB>
       <Grid container mb={5} justifyContent={"space-between"} spacing={3}>
         <Grid item xs={12} md={6}>
           <TextField
@@ -118,7 +118,7 @@ export const AllArticle = ({ authorId }) => {
               color="text.secondary"
               sx={{ mt: 1, ml: 1 }}
             >
-              {blogPage?.pages[0]?.totalRecords} results
+              {blogPage?.pages[0]?.totalRecords} kết quả
             </Typography>
           )}
         </Grid>

@@ -111,7 +111,7 @@ const Productswiper = () => {
                     <Image
                       imageURL={blog.imageURL}
                       sx={{ width: "100%", height: "310px" }}
-                      overlayContent={"READ THE FULL STORY"}
+                      overlayContent={"Đọc tất bài viết "}
                     />
                   </Grid>
                   <Grid
@@ -147,7 +147,7 @@ const Productswiper = () => {
                       </Typography>
 
                       <Button variant="contained" sx={{ padding: "15px 25px" }}>
-                        READ THE FULL STORY
+                        Đọc tất bài viết{" "}
                       </Button>
                     </Container>
                   </Grid>

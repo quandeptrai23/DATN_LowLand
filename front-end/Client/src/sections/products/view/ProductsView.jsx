@@ -95,7 +95,7 @@ const ProductsView = () => {
             }}
           >
             <Typography variant="h4" fontWeight={500}>
-              Our Products
+              Sản phẩm của chúng tôi{" "}
             </Typography>
             <Typography
               fontSize={14}
@@ -105,7 +105,7 @@ const ProductsView = () => {
                 textAlign: "center",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Tuyệt vời cho thời tiết ngày hè
             </Typography>
           </Box>
           <Productswiper />
@@ -133,7 +133,7 @@ const ProductsView = () => {
                       );
                     }}
                   >
-                    <MenuItem value={0}>All products</MenuItem>
+                    <MenuItem value={0}>Tất cả sản phẩm</MenuItem>
                     {!isFetching &&
                       productTypes &&
                       productTypes.map((item, index) => (
@@ -156,7 +156,7 @@ const ProductsView = () => {
                 }}
               >
                 <TextField
-                  label="Search your favorite coffee..."
+                  label="Tìm kiếm cafe yêu thích..."
                   variant="outlined"
                   sx={{ width: "80%", mr: "10px" }}
                   value={search}

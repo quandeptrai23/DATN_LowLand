@@ -7,7 +7,7 @@ const SectionTitle = ({ children, sx }) => {
         width: "fit-content",
         margin: "70px auto",
         wordBreak: "break-word",
-        maxWidth: "150px",
+        maxWidth: "180px",
       }}
     >
       <Typography
