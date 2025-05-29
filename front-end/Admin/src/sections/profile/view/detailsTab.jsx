@@ -20,7 +20,7 @@ const DetailsTab = ({ user }) => {
             fontWeight="medium"
             textTransform="capitalize"
           >
-            Platform Settings
+            Cài đặt{" "}
           </Typography>
           <Box pt={1} pb={2} px={2} lineHeight={1.25}>
             <Typography
@@ -29,7 +29,7 @@ const DetailsTab = ({ user }) => {
               color="text"
               textTransform="uppercase"
             >
-              Account
+              Tài khoản
             </Typography>
             <Box display="flex" alignItems="center" mb={0.5} ml={-1.5}>
               <Box mt={0.5}>
@@ -40,7 +40,7 @@ const DetailsTab = ({ user }) => {
               </Box>
               <Box width="80%" ml={0.5}>
                 <Typography variant="button" fontWeight="regular" color="text">
-                  Email me when someone follows me
+                  Gửi email cho tôi khi ai đó theo dõi
                 </Typography>
               </Box>
             </Box>
@@ -53,7 +53,7 @@ const DetailsTab = ({ user }) => {
               </Box>
               <Box width="80%" ml={0.5}>
                 <Typography variant="button" fontWeight="regular" color="text">
-                  Email me when someone answers on my post
+                  Gửi email cho tôi khi ai đó trả lời bài đăng{" "}
                 </Typography>
               </Box>
             </Box>
@@ -66,7 +66,7 @@ const DetailsTab = ({ user }) => {
               </Box>
               <Box width="80%" ml={0.5}>
                 <Typography variant="button" fontWeight="regular" color="text">
-                  Email me when someone mentions me
+                  Gửi email cho tôi khi ai đó nhắc đến tôi{" "}
                 </Typography>
               </Box>
             </Box>
@@ -77,7 +77,7 @@ const DetailsTab = ({ user }) => {
                 color="text"
                 textTransform="uppercase"
               >
-                Application
+                Ứng dụng
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" mb={0.5} ml={-1.5}>
@@ -89,7 +89,7 @@ const DetailsTab = ({ user }) => {
               </Box>
               <Box width="80%" ml={0.5}>
                 <Typography variant="button" fontWeight="regular" color="text">
-                  New launches and projects
+                  Ra mắt dự án mới{" "}
                 </Typography>
               </Box>
             </Box>
@@ -102,7 +102,7 @@ const DetailsTab = ({ user }) => {
               </Box>
               <Box width="80%" ml={0.5}>
                 <Typography variant="button" fontWeight="regular" color="text">
-                  Monthly product updates
+                  Cập nhật sản phẩm hàng tháng{" "}
                 </Typography>
               </Box>
             </Box>
@@ -115,7 +115,7 @@ const DetailsTab = ({ user }) => {
               </Box>
               <Box width="80%" ml={0.5}>
                 <Typography variant="button" fontWeight="regular" color="text">
-                  Subscribe to newsletter
+                  Đăng ký nhận bản tin{" "}
                 </Typography>
               </Box>
             </Box>
@@ -129,33 +129,33 @@ const DetailsTab = ({ user }) => {
             fontWeight="medium"
             textTransform="capitalize"
           >
-            Profile Information
+            Thông tin hồ sơ{" "}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
             {user.bio}
           </Typography>
           <Box sx={{ mt: 3 }}>
             <Typography variant="body2">
-              <strong>Full Name:</strong> {user.fullName}
+              <strong>Họ tên:</strong> {user.fullName}
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
-              <strong>Phone Number:</strong> {user.phoneNumber}
+              <strong>Số điện thoại:</strong> {user.phoneNumber}
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               <strong>Email:</strong> {user.email}
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
-              <strong>Location:</strong> {user.address}
+              <strong>Địa điểm:</strong> {user.address}
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
-              <strong>Position:</strong> {user?.position || "---"}
+              <strong>Vị trí:</strong> {user?.position || "---"}
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
-              <strong>Description:</strong> {user?.description || "---"}
+              <strong>Chi tiết:</strong> {user?.description || "---"}
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
               <Typography variant="body2" sx={{ mr: 1 }}>
-                <strong>Social:</strong>
+                <strong>Mạng xã hội:</strong>
               </Typography>
               <Box>
                 <IconButton color="primary" aria-label="facebook">

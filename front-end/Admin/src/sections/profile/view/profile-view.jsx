@@ -85,9 +85,9 @@ export default function ProfileView() {
               router.push("/dashboard");
             }}
           >
-            Home
+            Trang chủ
           </Link>
-          <Typography color="text.primary">Profile</Typography>
+          <Typography color="text.primary">Hồ sơ</Typography>
         </Breadcrumbs>
       </Box>
 
@@ -208,7 +208,7 @@ export default function ProfileView() {
                 aria-label="details"
                 onClick={() => setActiveTab("details")}
               >
-                Details
+                Chi tiết
               </IconButton>
               <IconButton
                 sx={{
@@ -220,7 +220,7 @@ export default function ProfileView() {
                 aria-label="edit"
                 onClick={() => setActiveTab("edit")}
               >
-                Edit
+                Sửa
               </IconButton>
               <IconButton
                 sx={{
@@ -233,7 +233,7 @@ export default function ProfileView() {
                 aria-label="password"
                 onClick={() => setActiveTab("changePassword")}
               >
-                Change Password
+                Đổi mật khẩu
               </IconButton>
             </Stack>
           </Grid>

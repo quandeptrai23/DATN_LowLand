@@ -14,7 +14,9 @@ const HomeMagazine = () => {
 
   return (
     <Container maxWidth={"md"} sx={{ marginBottom: "100px" }}>
-      <SectionTitle>BUY 2 MUGS AND GET A COFFEE MAGAZINE FREE</SectionTitle>
+      <SectionTitle>
+        MUA 2 CỐC VÀ ĐƯỢC NHẬN TẠP CHÍ CÀ PHÊ MIỄN PHÍ
+      </SectionTitle>
       <Grid
         container
         justifyContent={"center"}
@@ -32,15 +34,15 @@ const HomeMagazine = () => {
               alignItems: `${isMobile ? "center" : "start"}`,
             }}
           >
-            <Typography sx={{ margin: "10px" }}>PREMIUM OFFER</Typography>
+            <Typography sx={{ margin: "10px" }}>ƯU ĐÃI CAO CẤP</Typography>
             <Typography
               sx={{ fontWeight: "600", fontSize: "30px", margin: "10px" }}
             >
-              Get our Coffee Magazine
+              Tạp chí cà phê của chúng tôi
             </Typography>
             <Typography sx={{ margin: "10px" }}>
-              The most versatile furniture system ever created. Designed to fit
-              your life.
+              Hệ thống đồ nội thất đa năng nhất từng được tạo ra. Được thiết kế
+              để phù hợp với cuộc sống của bạn.
             </Typography>
 
             <ButtonLink
@@ -48,7 +50,7 @@ const HomeMagazine = () => {
               sx={{ margin: "10px" }}
               variant={"outlined"}
             >
-              START SHOPPING
+              SHOPPING
             </ButtonLink>
           </Box>
         </Grid>

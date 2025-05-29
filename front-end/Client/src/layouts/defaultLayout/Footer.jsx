@@ -29,7 +29,7 @@ const SubcribeForm = () => {
       }}
     >
       <Typography variant="caption" sx={{ opacity: "0.6" }}>
-        SIGN UP AND GET FREE COFFEE BAGS
+        ĐĂNG KÝ VÀ NHẬN TÚI CÀ PHÊ MIỄN PHÍ{" "}
       </Typography>
       <Typography sx={{ fontSize: "30px", margin: "15px 0px 20px" }}>
         Coffee Updates
@@ -54,7 +54,7 @@ const SubcribeForm = () => {
           variant="contained"
           sx={{ marginLeft: "10px" }}
         >
-          Subscribe
+          Đăng ký
         </Button>
       </Box>
     </Box>
@@ -94,7 +94,7 @@ const ContactFooter = () => {
             />
           </ButtonLink>
           <Typography sx={{ fontWeight: "700" }}>
-            LowLand Coffee &copy;
+            LowLand Cà Phê &copy;
           </Typography>
         </Grid>
         <Grid item sx={{ margin: "10px" }}>
@@ -106,8 +106,8 @@ const ContactFooter = () => {
               textAlign: "center",
             }}
           >
-            "Delivering the best coffee life since 1996. From coffee geeks to
-            the real ones."
+            "Mang đến trải nghiệm cà phê tuyệt vời nhất kể từ năm 1996. Từ những
+            người sành cà phê đến những người thực thụ."
           </Typography>
         </Grid>
         <Grid
@@ -120,11 +120,11 @@ const ContactFooter = () => {
           }}
         >
           <Typography sx={{ fontWeight: "bold" }}>MENU</Typography>
-          <ButtonLink href="/">Home</ButtonLink>
-          <ButtonLink href="/products">Products</ButtonLink>
+          <ButtonLink href="/">Trang chủ</ButtonLink>
+          <ButtonLink href="/products">Sản phẩm</ButtonLink>
           <ButtonLink href="/blogs">Blog</ButtonLink>
-          <ButtonLink href="/about">About</ButtonLink>
-          <ButtonLink href="/contact">Contact</ButtonLink>
+          <ButtonLink href="/about">Về chúng tôi</ButtonLink>
+          <ButtonLink href="/contact">Liên hệ</ButtonLink>
         </Grid>
         <Grid
           item
@@ -135,23 +135,13 @@ const ContactFooter = () => {
             margin: "10px",
           }}
         >
-          <Typography sx={{ fontWeight: "bold" }}>CONTACT US</Typography>
+          <Typography sx={{ fontWeight: "bold" }}>LIÊN HỆ</Typography>
           <Button>lowland@coffee.io</Button>
-          <Button>(+84) 892.809.999</Button>
+          <Button>(+84) 974.039.385</Button>
         </Grid>
       </Grid>
 
       <Divider sx={{ margin: "10px 0px" }} />
-      {/* <Typography sx={{ textAlign: "center", margin: "20px" }}>
-        Powered by{" "}
-        <Typography
-          sx={{ color: "var(--secondary-color)" }}
-          component={"a"}
-          href="/"
-        >
-          Group 8
-        </Typography>
-      </Typography> */}
     </Container>
   );
 };

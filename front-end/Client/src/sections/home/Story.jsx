@@ -17,11 +17,11 @@ const HomeStory = () => {
     >
       <IntroText
         variant={"h2"}
-        title={"Exquisite Coffee, Beautiful Space, Endless Experience."}
-        desciption={`Join us on a journey of exploration and delight, where the boundaries of
-        taste are pushed with every expertly brewed blend, and where the simple
-        pleasure of a cup of coffee becomes a moment of true connection and joy
-        shared with every sip.`}
+        title={"Cà phê hảo hạng, khoảng không gian đẹp, trải nghiệm bất tận."}
+        desciption={`Cùng chúng tôi trên hành trình khám phá và tận hưởng, nơi ranh giới của
+hương vị được đẩy mạnh với mỗi hỗn hợp pha chế chuyên nghiệp, và nơi niềm vui đơn giản
+của một tách cà phê trở thành khoảnh khắc kết nối và niềm vui thực sự
+được chia sẻ với mỗi ngụm.`}
       />
 
       <ButtonLink
@@ -29,7 +29,7 @@ const HomeStory = () => {
         href={"/blogs/79a5f2f2-3632-4bf9-b104-f5f098a92e47"}
         sx={{ fontWeight: "600" }}
       >
-        Read the full story
+        Những câu chuyện
       </ButtonLink>
     </Container>
   );

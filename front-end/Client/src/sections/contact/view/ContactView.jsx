@@ -44,9 +44,10 @@ const FormWrap = () => {
           }}
         >
           <Grid item md={8} xs={12}>
-            <Typography>CONTACT FORM</Typography>
+            <Typography>PHIẾU LIÊN HỆ</Typography>
             <Typography sx={{ marginBottom: "30px" }}>
-              Drop us your message and I'll get back to you as soon as possible.
+              Hãy gửi tin nhắn cho chúng tôi và tôi sẽ trả lời bạn sớm nhất có
+              thể.
             </Typography>
 
             <Box
@@ -61,7 +62,7 @@ const FormWrap = () => {
             >
               <TextField
                 id="outlined-basic"
-                label="NAME"
+                label="TÊN"
                 variant="outlined"
                 sx={{
                   marginBottom: "20px",
@@ -69,14 +70,14 @@ const FormWrap = () => {
               />
               <TextField
                 id="outlined-basic"
-                label="EMAIL ADDRESS"
+                label="EMAIL"
                 variant="outlined"
                 sx={{
                   marginBottom: "20px",
                 }}
               />
               <TextareaAutosize
-                placeholder="YOUR MESSAGE"
+                placeholder="GHI CHÚ"
                 style={{
                   padding: "15px",
                   maxWidth: { md: "500px", xs: "100%" },
@@ -96,7 +97,7 @@ const FormWrap = () => {
                   },
                 }}
               >
-                SEND MESSAGE
+                GỬI THÔNG TIN
               </Button>
             </Box>
           </Grid>
@@ -110,19 +111,19 @@ const FormWrap = () => {
               xs: "center",
             }}
           >
-            <Typography>CONTACT FORM</Typography>
+            <Typography>PHIẾU LIÊN HỆ</Typography>
 
             <Typography fontWeight={"Bold"} sx={{ marginBottom: "30px" }}>
               Lowland Coffee. Inc
             </Typography>
             <Typography>Minh Khai</Typography>
-            <Typography>Cau Dien</Typography>
-            <Typography sx={{ marginBottom: "30px" }}>Ha Noi</Typography>
-            <Typography>CALL US</Typography>
+            <Typography>Cầu Diễn</Typography>
+            <Typography sx={{ marginBottom: "30px" }}>Hà Nội</Typography>
+            <Typography>SỐ ĐIỆN THOẠI</Typography>
             <Typography sx={{ marginBottom: "30px" }}>
               +84 (415) 555-1212
             </Typography>
-            <Typography>EMAIL US</Typography>
+            <Typography>EMAIL</Typography>
             <Typography>site@lowlandCoffee.io</Typography>
           </Grid>
         </Grid>
@@ -142,9 +143,8 @@ const IntroductionBehindForm = () => {
           },
         }}
       >
-        <SectionTitle>DIRECTORY</SectionTitle>
+        <SectionTitle>Danh mục</SectionTitle>
         <IntroText variant={"h2"} />
-
         <Grid
           item
           sx={{
@@ -158,51 +158,11 @@ const IntroductionBehindForm = () => {
             },
           }}
         >
-          <Typography sx={{ marginTop: "20px" }}>OWNER</Typography>
-          <Typography sx={{ marginTop: "20px" }}>Vu Minh Quan</Typography>
-          <Box sx={{ textAlign: "center", marginBottom: "20px" }}>
-            <Typography sx={{ marginTop: "20px" }}>086-374-4962</Typography>
-            <Typography>quanvm@lowlandCoffee.com</Typography>
-          </Box>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            opacity: ".7",
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            flexDirection: {
-              md: "row",
-              xs: "column",
-            },
-          }}
-        >
-          <Typography sx={{ marginTop: "20px" }}>OWNER</Typography>
+          <Typography sx={{ marginTop: "20px" }}>Người sở hữu</Typography>
           <Typography sx={{ marginTop: "20px" }}>Nguyen Anh Quan</Typography>
           <Box sx={{ textAlign: "center", marginBottom: "20px" }}>
             <Typography sx={{ marginTop: "20px" }}>086-374-42242</Typography>
             <Typography>quanna@lowlandCoffee.com</Typography>
-          </Box>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            opacity: ".7",
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            flexDirection: {
-              md: "row",
-              xs: "column",
-            },
-          }}
-        >
-          <Typography sx={{ marginTop: "20px" }}>OWNER</Typography>
-          <Typography sx={{ marginTop: "20px" }}>Le Minh Khoi</Typography>
-          <Box sx={{ textAlign: "center", marginBottom: "20px" }}>
-            <Typography sx={{ marginTop: "20px" }}>0923-421-4962</Typography>
-            <Typography>khoilm@lowlandCoffee.com</Typography>
           </Box>
         </Grid>
       </Grid>
@@ -215,9 +175,9 @@ const ContactView = () => {
     <>
       <DecoComp
         space={200}
-        title={"Let's Connect"}
+        title={"Kết nối ngay"}
         desciption={
-          "At LowLand Coffee Shop, we believe in elevating your daily coffee experience. Nestled in the heart of the city, we offer more than just a cup of coffee – we offer a warm, inviting atmosphere where every sip is a journey of rich flavors and community connection. Come, savor the moment with us."
+          "Tại LowLand Coffee Shop, chúng tôi tin vào việc nâng cao trải nghiệm cà phê hàng ngày của bạn. Tọa lạc tại trung tâm thành phố, chúng tôi cung cấp nhiều hơn một tách cà phê – chúng tôi cung cấp một bầu không khí ấm áp, hấp dẫn, nơi mỗi ngụm cà phê là một hành trình của hương vị phong phú và kết nối cộng đồng. Hãy đến và tận hưởng khoảnh khắc cùng chúng tôi."
         }
       >
         <FloatInOnScroll>
@@ -235,25 +195,25 @@ const ContactView = () => {
                   unShowOverlay={true}
                 />
                 <Typography variant="" sx={{ opacity: ".6" }}>
-                  CAU GIAY
+                  Cầu Giấy
                 </Typography>
                 <Typography sx={{ fontWeight: "bold" }}>
-                  Cau Giay, Ha Noi
+                  Cầu Giấy, Hà Nội
                 </Typography>
-                <Typography sx={{ opacity: ".6" }}>Num 41, Cau Giay</Typography>
-                <Typography sx={{ opacity: ".6" }}>Ha Noi</Typography>
+                <Typography sx={{ opacity: ".6" }}>Số 38 Cầu Diễn</Typography>
+                <Typography sx={{ opacity: ".6" }}>Hà Nội</Typography>
                 <Typography sx={{ opacity: ".6", marginBottom: "30px" }}>
-                  Viet Nam
+                  Việt Nam
                 </Typography>
-                <Typography sx={{ opacity: ".6" }}>OPENING TIMES</Typography>
+                <Typography sx={{ opacity: ".6" }}>Thời gian mở cửa</Typography>
                 <Typography sx={{ opacity: ".6" }}>
-                  Mon - Fri 08:00 to 22:00
+                  Thứ hai - Thứ sáu 08:00 to 22:00
                 </Typography>
                 <Typography sx={{ opacity: ".6" }}>
-                  Sat - 09:00 to 20:00
+                  Thứ 7 - 09:00 to 20:00
                 </Typography>
                 <Typography sx={{ opacity: ".6", marginBottom: "20px" }}>
-                  Sun - 12:00 to 18:00
+                  Chủ Nhật - 12:00 to 18:00
                 </Typography>
               </Grid>
               <Grid item md={6} xs={12} sx={{ textAlign: "center" }}>
@@ -266,24 +226,22 @@ const ContactView = () => {
                   MINH KHAI
                 </Typography>
                 <Typography sx={{ fontWeight: "bold" }}>
-                  Nguyen Xa, Cau Dien, Ha Noi
+                  Nguyên Xá, Cầu Diễn, Hà Nội
                 </Typography>
-                <Typography sx={{ opacity: ".6" }}>
-                  Num 316, Street 30
-                </Typography>
-                <Typography sx={{ opacity: ".6" }}>Nguyen Xa</Typography>
+                <Typography sx={{ opacity: ".6" }}>Số 316 Đường 30</Typography>
+                <Typography sx={{ opacity: ".6" }}>Nguyên Xá</Typography>
                 <Typography sx={{ opacity: ".6", marginBottom: "30px" }}>
-                  Cau Dien
+                  Cầu Diễn
                 </Typography>
-                <Typography sx={{ opacity: ".6" }}>OPENING TIMES</Typography>
+                <Typography sx={{ opacity: ".6" }}>Thời gian mở cửa</Typography>
                 <Typography sx={{ opacity: ".6" }}>
-                  Mon - Fri 08:00 to 22:00
+                  Thứ hai - Thứ sáu 08:00 to 22:00
                 </Typography>
                 <Typography sx={{ opacity: ".6" }}>
-                  Sat - 09:00 to 20:00
+                  Thứ 7 - 09:00 to 20:00
                 </Typography>
                 <Typography sx={{ opacity: ".6", marginBottom: "20px" }}>
-                  Sun - 12:00 to 18:00
+                  Chủ Nhật - 12:00 to 18:00
                 </Typography>
               </Grid>
             </Grid>

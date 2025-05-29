@@ -98,7 +98,7 @@ const BlogCommentDrawer = () => {
           <Typography
             sx={{ fontSize: "20px", fontWeight: "600", mb: "20px", ml: "20px" }}
           >
-            {JSON.parse(isLikedAndTotal || "{}")?.totalComments || 0} Comments
+            {JSON.parse(isLikedAndTotal || "{}")?.totalComments || 0} Bình luận
           </Typography>
           <Divider sx={{ m: "20px" }} />
           <FormComment
@@ -137,7 +137,7 @@ const BlogCommentDrawer = () => {
                         textAlign: "center",
                       }}
                     >
-                      Oops! There's nothing here.
+                      Oops! Chưa có gì ở đây cả.
                     </Typography>
                   </Box>
                 ) : (

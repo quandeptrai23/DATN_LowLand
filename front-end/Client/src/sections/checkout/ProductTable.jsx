@@ -21,19 +21,19 @@ const ProductTable = ({ products }) => {
         >
           <TableRow>
             <TableCell align="center" colSpan={4}>
-              Products
+              Sản phẩm
             </TableCell>
             <TableCell align="center" colSpan={2}>
-              Details
+              Chi tiết
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell align="center">Image</TableCell>
-            <TableCell align="left">Name</TableCell>
+            <TableCell align="left">Tên</TableCell>
             <TableCell align="left">Size</TableCell>
-            <TableCell align="left">Price</TableCell>
-            <TableCell align="left">Quantity</TableCell>
-            <TableCell align="left">Total</TableCell>
+            <TableCell align="left">Giá</TableCell>
+            <TableCell align="left">Số lượng</TableCell>
+            <TableCell align="left">Tổng</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

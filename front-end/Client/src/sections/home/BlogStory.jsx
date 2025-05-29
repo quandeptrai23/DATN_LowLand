@@ -23,7 +23,9 @@ const HomeBlog = () => {
 
   return (
     <Container sx={{ marginBottom: "100px" }}>
-      <SectionTitle>BEHIND THE MUGS, LIFESTYLE STORIES</SectionTitle>
+      <SectionTitle>
+        PHÍA SAU CỐC CAFE LÀ NHỮNG CÂU CHUYỆN VỀ ĐỜI SỐNG
+      </SectionTitle>
 
       <Grid
         container
@@ -60,7 +62,7 @@ const HomeBlog = () => {
         sx={{ width: "100%", display: "flex", justifyContent: "center", mt: 3 }}
       >
         <ButtonLink href={"/blogs"} variant={"contained"} sx={{ width: "50%" }}>
-          Read more blogs
+          Thêm những bài viết
         </ButtonLink>
       </Box>
     </Container>

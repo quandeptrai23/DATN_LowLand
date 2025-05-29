@@ -72,7 +72,7 @@ const MaterialChart = () => {
               }}
             />
             <Button variant="contained" sx={{ py: 2 }} color="secondary">
-              Search
+              Tìm kiếm
             </Button>
           </Box>
         </Box>
@@ -87,7 +87,7 @@ const MaterialChart = () => {
                 ),
                 series: [
                   {
-                    name: "Current",
+                    name: "Hiện tại",
                     type: "column",
                     fill: "solid",
                     data: materialsPage.response.map(
@@ -95,7 +95,7 @@ const MaterialChart = () => {
                     ),
                   },
                   {
-                    name: "Minimum",
+                    name: "Giá trị cảnh báo",
                     type: "column",
                     fill: "solid",
                     data: materialsPage.response.map(

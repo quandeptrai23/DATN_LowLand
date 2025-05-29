@@ -23,12 +23,12 @@ const HomeView = () => {
       <HomeStory />
 
       <FloatInOnScroll>
-        <SectionTitle>FEATURED MUGS</SectionTitle>
+        <SectionTitle>ĐỒ UỐNG NỔI BẬT</SectionTitle>
         <SwiperProducts />
       </FloatInOnScroll>
 
       <FloatInOnScroll>
-        <SectionTitle>MORE PRODUCTS</SectionTitle>
+        <SectionTitle>CÁC SẢN PHẨM</SectionTitle>
 
         <Container
           maxWidth={"lg"}
@@ -44,7 +44,7 @@ const HomeView = () => {
             sx={{ mt: "50px", width: "50%" }}
             variant={"contained"}
           >
-            See more products
+            XEM THÊM
           </ButtonLink>
         </Container>
       </FloatInOnScroll>

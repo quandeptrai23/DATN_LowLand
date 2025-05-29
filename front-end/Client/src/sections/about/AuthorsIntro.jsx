@@ -29,7 +29,7 @@ const AuthorsIntro = () => {
         {[...Array(5)].map((_, index) => (
           <Grid item xm={12} sm={4} sx={{ width: "100%" }} key={index}>
             <Author
-              name={"Vu Minh Quan"}
+              name={"Nguyen Anh Quan"}
               position={"BRAND OWNER"}
               imageURL={"/static/images/logo.jpg"}
             />

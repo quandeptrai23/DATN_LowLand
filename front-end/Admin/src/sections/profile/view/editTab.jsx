@@ -21,7 +21,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
             fontWeight="medium"
             textTransform="capitalize"
           >
-            Edit Profile Information
+            Sửa thông tin
           </Typography>
           <Box sx={{ mt: 3 }}>
             <TextField
@@ -43,7 +43,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
               }
             />
             <FormControl fullWidth sx={{ my: 2, textAlign: "left" }}>
-              <InputLabel id="demo-simple-select-label2">Gender</InputLabel>
+              <InputLabel id="demo-simple-select-label2">Giới tính</InputLabel>
               <Select
                 labelId="demo-simple-select-label2"
                 value={editData.gender}
@@ -56,8 +56,8 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
                   }));
                 }}
               >
-                <MenuItem value={1}>Male</MenuItem>
-                <MenuItem value={0}>Female</MenuItem>
+                <MenuItem value={1}>Nam</MenuItem>
+                <MenuItem value={0}>Nữ</MenuItem>
               </Select>
             </FormControl>
             <TextField
@@ -114,7 +114,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
               disabled={disable}
               onClick={onSubmit}
             >
-              Edit
+              Sửa
             </Button>
           </Box>
         </Card>

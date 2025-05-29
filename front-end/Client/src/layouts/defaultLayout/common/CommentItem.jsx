@@ -101,7 +101,7 @@ const CommentMenu = ({
             }
           );
           reFetchTotal();
-          toast.success("Delete comment successfully");
+          toast.success("Xóa bình luận thành công");
         },
       }
     );
@@ -131,7 +131,7 @@ const CommentMenu = ({
           <ListItemIcon>
             <DeleteIcon color="error" />
           </ListItemIcon>
-          <ListItemText sx={{ color: "error.main" }}>Delete</ListItemText>
+          <ListItemText sx={{ color: "error.main" }}>Xóa</ListItemText>
         </MenuItem>,
       ]}
       {!isOwner && (
@@ -139,7 +139,7 @@ const CommentMenu = ({
           <ListItemIcon>
             <FlagIcon />
           </ListItemIcon>
-          <ListItemText>Report</ListItemText>
+          <ListItemText>Báo cáo</ListItemText>
         </MenuItem>
       )}
     </Menu>
@@ -416,7 +416,7 @@ const CommentItem = memo(
           }}
           startIcon={isFetching ? <CircularProgress size={15} /> : null}
         >
-          Show {comment.totalComments} replies
+          Hiển thị {comment.totalComments} bình luận
         </Button>
         <Box sx={{ display: "flex" }}>
           <Button
@@ -428,7 +428,7 @@ const CommentItem = memo(
             }}
             startIcon={isFetching ? <CircularProgress size={15} /> : null}
           >
-            Show more replies
+            Xem thêm
           </Button>
           <Button
             onClick={handleShowLess}
@@ -440,7 +440,7 @@ const CommentItem = memo(
               }`,
             }}
           >
-            Show less
+            Ẩn bớt{" "}
           </Button>
         </Box>
       </Box>

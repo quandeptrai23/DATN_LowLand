@@ -6,7 +6,7 @@ import SectionTitle from "src/components/SectionTitle";
 const Introduction = () => {
   return (
     <Box sx={{}}>
-      <SectionTitle>OUR OFFICES</SectionTitle>
+      <SectionTitle>CỬA HÀNG CỦA CHÚNG TÔI</SectionTitle>
       <IntroText variant={"h2"} />
     </Box>
   );

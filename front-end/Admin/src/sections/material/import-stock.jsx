@@ -730,7 +730,7 @@ const ImportStock = () => {
               onClick={() => handleOpenDetails(importItem.importStockId)}
             >
               <Grid container spacing={1.5}>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={2}>
                     <Typography variant="subtitle2">Mã phiếu:</Typography>
                     <Typography>{importItem.importCode}</Typography>
                 </Grid>
@@ -742,9 +742,9 @@ const ImportStock = () => {
                         new Date(importItem.importDate).toLocaleTimeString()}
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={4}>
                     <Typography variant="subtitle2">Nhà cung cấp:</Typography>
-                    <Typography noWrap>{importItem.supplierName || "N/A"}</Typography>
+                    <Typography >{importItem.supplierName || "N/A"}</Typography>
                 </Grid>
                  <Grid item xs={12} sm={6} md={3}>
                     <Typography variant="subtitle2" color="primary.main">Tổng tiền:</Typography>

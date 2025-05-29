@@ -46,7 +46,7 @@ const EmptyCartContent = () => {
           opacity: "0.7",
         }}
       >
-        Oops, There's nothing here!
+        Oops, Chưa có gì ở đây cả!
       </Typography>
       <Button
         color="secondary"
@@ -58,7 +58,7 @@ const EmptyCartContent = () => {
           router.replace("/products");
         }}
       >
-        Explore our products
+        Khám phá sản phẩm
       </Button>
     </Box>
   );
@@ -208,7 +208,7 @@ const CartItem = ({
           startIcon={<DeleteIcon />}
           onClick={handleRemoveItem}
         >
-          REMOVE
+          Xóa
         </Button>
       </Box>
     </Box>
@@ -265,7 +265,7 @@ const CartFooter = ({ total }) => {
         }}
       >
         <Typography sx={{ fontWeight: "600", fontSize: "20px" }}>
-          Subtotal
+          Tổng cộng
         </Typography>
         <Box sx={{ textAlign: "right" }}>
           <Typography
@@ -290,7 +290,7 @@ const CartFooter = ({ total }) => {
           dispatch(DrawerManagerSlice.actions.setOpenCartDrawer(false));
         }}
       >
-        CONTINUE TO CHECKOUT
+        Tiếp tục thanh toán{" "}
       </ButtonLink>
     </Box>
   );

@@ -31,10 +31,10 @@ const BlogsView = () => {
         </FloatInOnScroll>
 
         <FloatInOnScroll>
-          <Motto author={`QUAN VU - OWNER OF LOWLAND`}>
-            `"I wake up some mornings and sit and have my coffee and look out at
-            my beautiful garden, and I go, ’Remember how good this is. Because
-            you can lose it."
+          <Motto author={`NGUYEN ANH QUAN - OWNER OF LOWLAND`}>
+            "Tôi thức dậy vào một buổi sáng, ngồi uống cà phê và ngắm khu vườn
+            xinh đẹp của mình, và tôi nghĩ, 'Hãy nhớ rằng điều này tốt đẹp như
+            thế nào. Bởi vì bạn có thể mất nó.'"
           </Motto>
         </FloatInOnScroll>
       </DecoComp>

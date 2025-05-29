@@ -309,7 +309,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                 marginRight: "10px",
               }}
             >
-              Quantity
+              Số lượng
             </Typography>
             {!selectedSize ? (
               <Box display={"flex"}>
@@ -327,7 +327,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                       transform: "translateY(10%)",
                     }}
                     onClick={handleDecreaseQuantity}
-                    title="Decrease quantity"
+                    title="Giảm số lượng"
                   >
                     <RemoveCircleIcon color="secondary" />
                   </IconButton>
@@ -355,7 +355,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                       transform: "translateY(10%)",
                     }}
                     onClick={handleIncreaseQuantity}
-                    title="Increase quantity"
+                    title="Tăng số lượng"
                   >
                     <AddCircleIcon color="secondary" />
                   </IconButton>
@@ -384,7 +384,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                     )
                   }
                 >
-                  ADD TO CART
+                  Thêm vào giỏ hàng
                 </Button>
               </Box>
             )}
@@ -393,7 +393,9 @@ const DetailProductView = ({ productData, list, isFetching }) => {
 
         <Grid container sx={{ opacity: "0.5", my: "50px" }}>
           <Grid item md={6} xs={12}>
-            <Typography sx={{ textTransform: "uppercase" }}>details</Typography>
+            <Typography sx={{ textTransform: "uppercase" }}>
+              Chi tiết
+            </Typography>
 
             {!productData?.description ? (
               <>
@@ -429,7 +431,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
             }}
           >
             <Typography sx={{ textTransform: "uppercase" }}>
-              materials
+              Nguyên liệu
             </Typography>
 
             {!productData?.recipes ? (
@@ -483,7 +485,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
             <Typography
               sx={{ fontSize: "22px", mb: "15px", fontWeight: "bold" }}
             >
-              Handmade by CoffeeStyle.
+              Sản phẩm tạo bởi CoffeeStyle.
             </Typography>
             <Typography
               sx={{
@@ -494,8 +496,8 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                 },
               }}
             >
-              The most versatile furniture system ever created. Designed to fit
-              your life.
+              Hệ thống đồ nội thất đa năng nhất từng được tạo ra. Được thiết kế
+              để phù hợp với cuộc sống của bạn.
             </Typography>
 
             <List>
@@ -505,7 +507,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                     <StarBorder sx={{ color: "white", fontSize: "40px" }} />
                   </ListItemIcon>
                   <Box>
-                    <ListItemText primary="Premium Quality" />
+                    <ListItemText primary="Chất lượng cao cấp" />
                     <ListItemText primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in." />
                   </Box>
                 </ListItemButton>
@@ -516,7 +518,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                     <StarBorder sx={{ color: "white", fontSize: "40px" }} />
                   </ListItemIcon>
                   <Box>
-                    <ListItemText primary="Gentle to the Environment" />
+                    <ListItemText primary="Thân thiện với môi trường" />
                     <ListItemText primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in." />
                   </Box>
                 </ListItemButton>
@@ -526,13 +528,13 @@ const DetailProductView = ({ productData, list, isFetching }) => {
         </Grid>
       </Container>
 
-      <SectionTitle>YOU MIGHT ALSO LIKE THESE</SectionTitle>
+      <SectionTitle>CÓ THỂ BẠN SẼ THÍCH</SectionTitle>
 
       <Container maxWidth={"lg"} sx={{ mb: "50px" }}>
         <SwiperProducts maxWidth={"lg"} list={list} />
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
           <ButtonLink variant={"contained"} href={"/products"}>
-            VIEW ALL PRODUCTS
+            XEM TẤT CẢ
           </ButtonLink>
         </Box>
       </Container>

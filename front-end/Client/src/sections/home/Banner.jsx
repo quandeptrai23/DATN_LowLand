@@ -32,13 +32,11 @@ const HomeBanner = () => {
           <Typography
             sx={{ marginBottom: "20px", fontWeight: "600", opacity: "0.8" }}
           >
-            BEST PLACE FOR CHILL'IN
+            NƠI TUYỆT VỜI ĐỂ THƯ GIÃN
           </Typography>
           <IntroText
             title={"LowLand Coffee"}
-            desciption={`Step into a world where each sip of coffee is a delightful journey,
-            where flavors dance on your palate and every cup holds the promise
-            of a new adventure, only at our coffee haven.`}
+            desciption={`Bước vào thế giới mà mỗi ngụm cà phê là một hành trình thú vị, nơi hương vị nhảy múa trên vòm miệng và mỗi tách cà phê đều hứa hẹn một cuộc phiêu lưu mới, chỉ có tại cà phê của chúng tôi.`}
           />
           <ButtonLink
             href={"/products"}
@@ -51,7 +49,7 @@ const HomeBanner = () => {
               },
             }}
           >
-            EXPLORE OUR PRODUCTS
+            KHÁM PHÁ SẢN PHẨM
           </ButtonLink>
         </Box>
       </Container>

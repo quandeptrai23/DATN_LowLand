@@ -168,7 +168,7 @@ const FormComment = memo(
             setNewComment("");
             setReplyTo(null);
             reFetchTotal();
-            toast.success("Send comment successfully");
+            toast.success("Đăng bình luận thành công");
           },
         });
       }
@@ -192,12 +192,12 @@ const FormComment = memo(
             replyTo
               ? `${
                   replyTo.type !== "edit"
-                    ? `Reply to ${replyTo.email}`
-                    : "Edit comment"
+                    ? `Trả lời cho ${replyTo.email}`
+                    : "Sửa bình luận"
                 } `
               : "Comment"
           }`}
-          placeholder="Share your comment with the author..."
+          placeholder="Chia sẻ bình luận của bạn với tác giả..."
           autoComplete="off"
           multiline
           value={newComment}

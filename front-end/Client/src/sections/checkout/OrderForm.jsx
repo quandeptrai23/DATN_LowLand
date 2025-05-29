@@ -66,13 +66,13 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
       !userData?.address
     ) {
       setAttempt(true);
-      toast.error("Please enter receiver's information");
+      toast.error("Vui lòng nhập thông tin người nhận");
       return;
     }
     createOrder(order, {
       onSuccess: (res) => {
         setOrderId(res);
-        toast.success("Create your order successfully");
+        toast.success("Tạo đơn hàng của bạn thành công");
         dispatch(CartManagerSlice.actions.clearCart());
         setOpen(true);
       },
@@ -91,7 +91,7 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
           <Grid item sm={6}>
             <Box sx={{ display: "flex", alignItems: "end" }}>
               <Typography sx={{ fontWeight: "600", fontSize: "20px", mr: 3 }}>
-                Message:
+                Ghi chú:
               </Typography>
               <TextField
                 label="Message for us"
@@ -103,9 +103,9 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
               />
             </Box>
             <Typography sx={{ mt: 2, fontSize: "14px" }}>
-              Clicking "Order" means you agree to our{" "}
+              Nhấp vào "Đặt hàng" có nghĩa là bạn đồng ý với chúng tôi{" "}
               <Typography component={"a"} color={"secondary"} href="#">
-                Terms & Conditions.
+                Điều khoản & Điều kiện của chúng tôi.{" "}
               </Typography>
             </Typography>
           </Grid>
@@ -118,7 +118,7 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
                 width: "100%",
               }}
             >
-              <Typography sx={{ fontSize: "20px", mr: 3 }}>Subtotal</Typography>
+              <Typography sx={{ fontSize: "20px", mr: 3 }}>Tổng cộng</Typography>
               <Typography textAlign={"right"}>
                 {formatPrice(caculateSubtotal())}
                 <sup>₫</sup>
@@ -133,7 +133,7 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
               }}
             >
               <Typography sx={{ fontSize: "20px", mr: 3 }}>
-                Tax (10%)
+                Thuế (10%)
               </Typography>
               <Typography textAlign={"right"}>
                 {formatPrice(caculateTax())}
@@ -149,7 +149,7 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
                 justifyContent: "space-between",
               }}
             >
-              <Typography sx={{ fontSize: "20px", mr: 3 }}>Total</Typography>
+              <Typography sx={{ fontSize: "20px", mr: 3 }}>Tổng cần trả</Typography>
               <Typography
                 textAlign={"right"}
                 color={"secondary"}
@@ -165,7 +165,7 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
               sx={{ my: 2, width: "100%" }}
               onClick={handleOrder}
             >
-              Order
+              Đặt
             </Button>
           </Grid>
         </Grid>

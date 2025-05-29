@@ -234,9 +234,9 @@ export default function UserPage() {
             allowScrollButtonsMobile
             aria-label="scrollable force tabs example"
           >
-            <Tab label="ADMIN" />
-            <Tab label="EMPLOYEE" />
-            <Tab label="CUSTOMER" />
+            <Tab label="Admin" />
+            <Tab label="Nhân viên" />
+            <Tab label="Khách hàng" />
           </Tabs>
         </Box>
         <Button
@@ -246,7 +246,7 @@ export default function UserPage() {
           onClick={() => setOpenAddModal(true)}
           sx={{ mt: { xs: 2, sm: 0 }, width: { xs: "100%", sm: "auto" } }}
         >
-          {tabValue.role} mới
+          Thêm mới
         </Button>
       </Card>
 
@@ -430,7 +430,9 @@ export default function UserPage() {
               </Grid>
               <Grid item md={6} xs={12}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label2">Gender</InputLabel>
+                  <InputLabel id="demo-simple-select-label2">
+                    Giới tính
+                  </InputLabel>
                   <Select
                     labelId="demo-simple-select-label2"
                     value={userInfo.gender || 1}
@@ -441,8 +443,8 @@ export default function UserPage() {
                       setUserInfo({ ...userInfo, gender: e.target.value })
                     }
                   >
-                    <MenuItem value={1}>Male</MenuItem>
-                    <MenuItem value={0}>Female</MenuItem>
+                    <MenuItem value={1}>Nam</MenuItem>
+                    <MenuItem value={0}>Nữ</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
@@ -521,7 +523,9 @@ export default function UserPage() {
               </Grid>
               <Grid item md={4} xs={12}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Active</InputLabel>
+                  <InputLabel id="demo-simple-select-label">
+                    Cho phép
+                  </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     value={editUserInfo?.isActive ? 1 : 0}
@@ -543,7 +547,7 @@ export default function UserPage() {
                           icon="teenyicons:tick-circle-solid"
                           sx={{ color: "green", mr: 1 }}
                         />
-                        Active
+                        Cho phép
                       </Typography>
                     </MenuItem>
                     <MenuItem
@@ -557,7 +561,7 @@ export default function UserPage() {
                           icon="zondicons:close-solid"
                           sx={{ color: "#ba1f1d", mr: 1 }}
                         />
-                        Inactive
+                        Không phép
                       </Typography>
                     </MenuItem>
                   </Select>
@@ -584,7 +588,9 @@ export default function UserPage() {
               </Grid>
               <Grid item md={6} xs={12}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                  <InputLabel id="demo-simple-select-label">
+                    Giới tính
+                  </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     value={editUserInfo?.gender ? 1 : 0}
@@ -598,8 +604,8 @@ export default function UserPage() {
                       }));
                     }}
                   >
-                    <MenuItem value={1}>Male</MenuItem>
-                    <MenuItem value={0}>Female</MenuItem>
+                    <MenuItem value={1}>Nam</MenuItem>
+                    <MenuItem value={0}>Nữ</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

@@ -63,7 +63,7 @@ const HeaderTab = ({ isMobile, showNav, setShowNav }) => {
       orientation={isMobile ? "vertical" : "horizontal"}
     >
       <Tab
-        label="HOME"
+        label="Trang Chủ"
         value={""}
         sx={{
           fontWeight: "bold",
@@ -71,7 +71,7 @@ const HeaderTab = ({ isMobile, showNav, setShowNav }) => {
         }}
       />
       <Tab
-        label="OUR PRODUCTS"
+        label="Sản Phẩm"
         value={"products"}
         sx={{
           fontWeight: "bold",
@@ -87,7 +87,7 @@ const HeaderTab = ({ isMobile, showNav, setShowNav }) => {
         }}
       />
       <Tab
-        label="ABOUT"
+        label="Về Chúng Tôi"
         value={"about"}
         sx={{
           fontWeight: "bold",
@@ -95,7 +95,7 @@ const HeaderTab = ({ isMobile, showNav, setShowNav }) => {
         }}
       />
       <Tab
-        label="CONTACT"
+        label="Liên Hệ"
         value={"contact"}
         sx={{
           fontWeight: "bold",
@@ -154,7 +154,7 @@ const Header = () => {
           showNav={showNav}
           setShowNav={setShowNav}
         />
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", minWidth:"fit-content" }}>
           <>
             {userDetails ? (
               <IconButton onClick={handleOpenUserDrawer}>
@@ -164,7 +164,7 @@ const Header = () => {
               </IconButton>
             ) : (
               <Button variant="contained" onClick={() => router.push("/login")}>
-                Login
+                Đăng nhập
               </Button>
             )}
           </>
