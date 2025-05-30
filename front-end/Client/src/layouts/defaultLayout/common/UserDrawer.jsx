@@ -69,7 +69,7 @@ const UserDrawerContent = () => {
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
-            <ListItemText primary={"Profile"} />
+            <ListItemText primary={"Thông tin cá nhân"} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
@@ -81,7 +81,7 @@ const UserDrawerContent = () => {
             <ListItemIcon>
               <LogoutIcon color={"error"} />
             </ListItemIcon>
-            <ListItemText primary={"Logout"} />
+            <ListItemText primary={"Đang xuất"} />
           </ListItemButton>
         </ListItem>
       </List>

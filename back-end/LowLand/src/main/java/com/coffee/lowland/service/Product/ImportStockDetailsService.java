@@ -44,6 +44,7 @@ public class ImportStockDetailsService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
     public void createDetails(List<DetailsImportStockRequest> request, String importStockId){
         if(request != null){
             for(DetailsImportStockRequest item : request){

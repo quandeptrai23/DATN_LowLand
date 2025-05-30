@@ -38,9 +38,9 @@ public class MaterialService {
     @PreAuthorize("hasAnyAuthority('ADMIN','EMPLOYEE')")
     public List<Material> getAllByQuery(String query, Integer size){
         if(size == null)
-        return _repo.findAllByMaterialNameContainsIgnoreCase(query);
+        return _repo.findAll(query);
         else return _repo
-                .findAllByMaterialNameContainsIgnoreCase(query, Pageable.ofSize(size))
+                .findAll(query, Pageable.ofSize(size))
                 .getContent();
     }
 
@@ -77,7 +77,12 @@ public class MaterialService {
                             .isActive(true)
                             .build());
                 });
-        found.setQuantity(found.getQuantity()+quantity);
+        double newQuantity = found.getQuantity()+quantity;
+        if(newQuantity < 0 ) throw new AppExceptions(ErrorCode.OUT_OF_MATERIAL);
+        found.setQuantity(newQuantity);
+        if(!found.getIsActive()){
+            found.setIsActive(true);
+        }
         return _repo.save(found);
     }
 

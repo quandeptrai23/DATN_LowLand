@@ -69,7 +69,9 @@ public enum ErrorCode {
     PRODUCT_PRICE_AT_LEAST(4066, "Product price must be at least 10k", HttpStatus.BAD_REQUEST),
     INVALID_MATERIAL_IN_PRODUCT(4067, "Invalid quantity of material in product", HttpStatus.BAD_REQUEST),
     //import stock
-    IMPORT_NOTFOUND(4070,"Not found import stock", HttpStatus.NOT_FOUND);
+    IMPORT_NOTFOUND(4070,"Not found import stock", HttpStatus.NOT_FOUND),
+    OUT_OF_MATERIAL(4071, "Out of material", HttpStatus.BAD_REQUEST),
+    ;
 
     int code;
     String message;
