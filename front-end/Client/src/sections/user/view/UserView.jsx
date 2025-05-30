@@ -13,11 +13,11 @@ import {
 
 const UserView = () => {
   return (
-    <SideLayout title={"User profile"}>
+    <SideLayout title={"Thông tin cá nhân"}>
       <Container disableGutters maxWidth={"100%"} sx={{ my: "50px" }}>
         <CustomizedBreadcrumbs sx={{ mb: "30px" }}>
-          <BreadcrumItem href="/" label="Home" icon={<HomeIcon />} />
-          <BreadcrumItem href="#" label="User" />
+          <BreadcrumItem href="/" label="Trang chủ" icon={<HomeIcon />} />
+          <BreadcrumItem href="#" label="Người dùng" />
         </CustomizedBreadcrumbs>
 
         <Paper sx={{ px: "25px", width: "100%", py: "50px" }}>

@@ -31,7 +31,7 @@ const AuthorBlogsView = () => {
       <CustomizedBreadcrumbs sx={{ mb: "40px" }}>
         <BreadcrumItem
           icon={<HomeIcon />}
-          label={"Home"}
+          label={"Trang chủ"}
           href={"/"}
           component={"a"}
         />

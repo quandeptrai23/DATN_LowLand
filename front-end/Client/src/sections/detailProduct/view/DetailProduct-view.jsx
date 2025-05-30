@@ -117,10 +117,10 @@ const DetailProductView = ({ productData, list, isFetching }) => {
           <BreadcrumItem
             component="a"
             href="/"
-            label="Home"
+            label="Trang chủ"
             icon={<HomeIcon fontSize="small" />}
           />
-          <BreadcrumItem component="a" href="/products" label="Products" />
+          <BreadcrumItem component="a" href="/products" label="Sản phẩm" />
           <BreadcrumItem
             component="a"
             href={path}

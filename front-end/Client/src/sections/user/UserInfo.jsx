@@ -64,7 +64,7 @@ const UserInfo = () => {
     updateUser(formData, {
       onSuccess: (data) => {
         dispatch(UserManagerSlice.actions.updateUser(data));
-        toast.success("Update successfully");
+        toast.success("Cập nhật thành công");
         setFile(null);
         setPassword("");
         setConfirmPassword("");
@@ -80,7 +80,9 @@ const UserInfo = () => {
 
   return (
     <Box sx={{ position: "relative", width: "100%", mb: 5 }}>
-      <SectionTitleB sx={{ textAlign: "left" }}>User information</SectionTitleB>
+      <SectionTitleB sx={{ textAlign: "left" }}>
+        Thông tin cá nhân
+      </SectionTitleB>
       <InnerLoading
         isLoading={isPending}
         sx={{ backgroundColor: "white", zIndex: 2 }}
@@ -152,7 +154,7 @@ const UserInfo = () => {
               onChange={(e) => setFullName(e.target.value)}
             ></TextField>
             <FormControl fullWidth sx={{ my: 2, textAlign: "left" }}>
-              <InputLabel id="demo-simple-select-label2">Gender</InputLabel>
+              <InputLabel id="demo-simple-select-label2">Giới tính</InputLabel>
               <Select
                 labelId="demo-simple-select-label2"
                 value={gender || 1}
@@ -162,8 +164,8 @@ const UserInfo = () => {
                   setGender(e.target.value);
                 }}
               >
-                <MenuItem value={1}>Male</MenuItem>
-                <MenuItem value={0}>Female</MenuItem>
+                <MenuItem value={1}>Nam</MenuItem>
+                <MenuItem value={0}>Nữ</MenuItem>
               </Select>
             </FormControl>
             <TextField
@@ -223,7 +225,7 @@ const UserInfo = () => {
               !password
             }
           >
-            Update profile
+            Cập nhật hồ sơ
           </Button>
         )}
       </Box>
