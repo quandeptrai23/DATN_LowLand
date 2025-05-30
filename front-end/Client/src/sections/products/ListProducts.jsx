@@ -23,6 +23,10 @@ const ListProducts = () => {
                 justifyContent: "center",
                 width: "100%",
                 margin: "auto",
+                gap: {
+                  xs: "16px",
+                  md: 0,
+                },
               }}
               spacing={{ sm: 4, xs: 0 }}
             >

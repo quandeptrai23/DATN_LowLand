@@ -61,7 +61,7 @@ const HomeBlog = () => {
       <Box
         sx={{ width: "100%", display: "flex", justifyContent: "center", mt: 3 }}
       >
-        <ButtonLink href={"/blogs"} variant={"contained"} sx={{ width: "50%" }}>
+        <ButtonLink href={"/blogs"} variant={"contained"} sx={{ width: "60%" }}>
           Thêm những bài viết
         </ButtonLink>
       </Box>
