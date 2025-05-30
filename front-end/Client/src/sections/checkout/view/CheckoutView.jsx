@@ -59,18 +59,19 @@ const OrderPayment = ({ open, orderId }) => {
         </Box>
       ) : (
         <>
-          <DialogTitle>Pay for now!</DialogTitle>
+          <DialogTitle>Thanh toán ngay!</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Click pay now to pay for your order or you can pay later.
+              Nhấp vào thanh toán ngay để thanh toán cho đơn hàng của bạn hoặc
+              bạn có thể thanh toán sau.{" "}
             </DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="contained">
-              Cancel
+              Hủy
             </Button>
             <Button onClick={handlePay} variant="contained" color="success">
-              Pay now
+              Thanh toán
             </Button>
           </DialogActions>
         </>
@@ -105,8 +106,7 @@ const CheckoutView = () => {
           <Box sx={{ display: "flex", alignItems: "center", color: "#ee4d2d" }}>
             <AccountBoxIcon sx={{ mr: 1 }} />
             <Typography sx={{ fontWeight: "600" }}>
-              Receiver's information
-            </Typography>
+Thông tin người nhận            </Typography>
           </Box>
           <Box
             sx={{
@@ -126,7 +126,7 @@ const CheckoutView = () => {
             >
               <Box sx={{ mr: 3, width: { xs: "100%", lg: "250px" } }}>
                 <Typography sx={{ fontWeight: "600", mr: 3 }}>
-                  Customer name:{" "}
+                  Tên khách hàng:{" "}
                 </Typography>
                 <TextField
                   color={"secondary"}
@@ -143,7 +143,7 @@ const CheckoutView = () => {
               </Box>
               <Box sx={{ mr: 3, width: { xs: "100%", lg: "200px" } }}>
                 <Typography sx={{ fontWeight: "600", mr: 3 }}>
-                  Phone numer:{" "}
+                  Số điện thoại:{" "}
                 </Typography>
                 <TextField
                   color={"secondary"}
@@ -178,7 +178,7 @@ const CheckoutView = () => {
         <Paper sx={{ p: 3, mt: 3 }}>
           <Box>
             <Typography sx={{ fontWeight: "600", fontSize: "20px" }}>
-              Order
+              Đặt
             </Typography>
             <Divider />
           </Box>

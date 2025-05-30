@@ -65,7 +65,7 @@ export default function ProfileView() {
       {
         onSuccess: (res) => {
           dispatch(UserManagerSlice.actions.updateUser(res));
-          toast.success("Update profile successfully");
+          toast.success("Cập nhật hồ sơ thành công");
           setEditData(res);
           setFile(null);
         },

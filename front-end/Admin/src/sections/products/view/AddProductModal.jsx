@@ -55,7 +55,7 @@ const AddProductModal = ({ open, onClose, refetch }) => {
         setRecipes([]);
         setProductData({});
         setCurrentTab(0);
-        toast.success("Add product successfully");
+        toast.success("Thêm sản phẩm thành công");
         refetch();
         onClose();
       },

@@ -99,10 +99,10 @@ export const AllArticle = ({ authorId }) => {
       <Grid container mb={5} justifyContent={"space-between"} spacing={3}>
         <Grid item xs={12} md={6}>
           <TextField
-            label="Search"
+            label="Tìm"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search blogs..."
+            placeholder="Tìm kiếm bài đăng..."
             sx={{ width: "100%" }}
             InputProps={{
               startAdornment: (

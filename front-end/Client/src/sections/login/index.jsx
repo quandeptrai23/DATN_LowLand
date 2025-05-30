@@ -59,7 +59,7 @@ const LoginView = () => {
     e.preventDefault();
     if (!username || !password) {
       setAttempt(true);
-      toast.error("Please enter your username and password");
+      toast.error("Nhập tài khoản và mật khẩu");
       return;
     }
     loginByUsernameAndPassword(
@@ -67,7 +67,7 @@ const LoginView = () => {
       {
         onSuccess: (data) => {
           dispatch(UserManagerSlice.actions.setUser(data));
-          toast.success("Logged in successfully");
+          toast.success("Đăng nhập thành công");
           router.replace("/");
         },
       }
@@ -79,7 +79,7 @@ const LoginView = () => {
       loginWithGoogle(response.code, {
         onSuccess: (res) => {
           dispatch(UserManagerSlice.actions.setUser(res));
-          toast.success("Logged in successfully");
+          toast.success("Đăng nhập thành công");
           router.replace("/");
         },
       });
@@ -148,7 +148,7 @@ const LoginView = () => {
                       WebkitTextStroke: "1px #eee",
                     }}
                   >
-                    Login to join our Chill'in
+                    Đăng nhập để có thời gian thư giãn với chúng tôi{" "}
                   </Typography>
                 </Paper>
               </Grid>
@@ -186,9 +186,7 @@ const LoginView = () => {
                     }}
                     error={password === "" && attemp}
                     helperText={
-                      password === "" && attemp
-                        ? "Please enter your password"
-                        : ""
+                      password === "" && attemp ? "Hãy nhập mật khẩu" : ""
                     }
                     sx={{ width: "100%", marginBottom: "20px" }}
                   />
@@ -198,11 +196,11 @@ const LoginView = () => {
                     sx={{ width: "100%" }}
                     onClick={handleLogin}
                   >
-                    Login
+                    Đăng nhập
                   </Button>
                 </Stack>
                 <Divider sx={{ mt: 2 }}>
-                  <Typography>Or login with</Typography>
+                  <Typography>Hoặc đăng nhập với</Typography>
                 </Divider>
 
                 <Button
@@ -214,16 +212,16 @@ const LoginView = () => {
                   Google
                 </Button>
                 <Typography sx={{ mt: 2 }}>
-                  Don't have an account?{" "}
+                  Bạn chưa có tài khoản?
                   <Button
                     color="secondary"
                     variant="text"
                     onClick={() => router.push("/signUp")}
                     sx={{ textDecoration: "underline" }}
                   >
-                    Sign Up
+                    Đăng ký
                   </Button>
-                  now!
+                  ngay!
                 </Typography>
               </Grid>
             </Grid>

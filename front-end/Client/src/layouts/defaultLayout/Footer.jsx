@@ -32,7 +32,7 @@ const SubcribeForm = () => {
         ĐĂNG KÝ VÀ NHẬN TÚI CÀ PHÊ MIỄN PHÍ{" "}
       </Typography>
       <Typography sx={{ fontSize: "30px", margin: "15px 0px 20px" }}>
-        Coffee Updates
+        Tin tức{" "}
       </Typography>
       <Box
         sx={{

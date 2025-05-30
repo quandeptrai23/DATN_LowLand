@@ -76,7 +76,7 @@ const ProductDetailModal = ({ productId, open, onClose, refetch }) => {
           setRecipes([]);
           setProductData(null);
           setCurrentTab(0);
-          toast.success("Product updated successfully");
+          toast.success("Cập nhật sản phẩm thành công");
           refetch();
           onClose();
         },

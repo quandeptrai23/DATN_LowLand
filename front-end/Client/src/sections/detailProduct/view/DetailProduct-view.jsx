@@ -79,7 +79,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
       productDetailsId: productDetailsId,
     };
     dispatch(CartManagerSlice.actions.addToCart(newItem));
-    toast.success("Add to cart successfully!");
+    toast.success("Thêm vào giỏ hàng thành công!");
   };
 
   const [quantity, setQuantity] = useState(1);
@@ -508,7 +508,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                   </ListItemIcon>
                   <Box>
                     <ListItemText primary="Chất lượng cao cấp" />
-                    <ListItemText primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in." />
+                    <ListItemText primary="" />
                   </Box>
                 </ListItemButton>
               </ListItem>
@@ -519,7 +519,7 @@ const DetailProductView = ({ productData, list, isFetching }) => {
                   </ListItemIcon>
                   <Box>
                     <ListItemText primary="Thân thiện với môi trường" />
-                    <ListItemText primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in." />
+                    <ListItemText primary="" />
                   </Box>
                 </ListItemButton>
               </ListItem>

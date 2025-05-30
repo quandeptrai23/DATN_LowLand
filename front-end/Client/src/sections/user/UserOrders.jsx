@@ -95,11 +95,11 @@ const UserOrders = () => {
             onChange={(e) => setStatus(e.target.value)}
             label="Status"
           >
-            <MenuItem value="-1">All</MenuItem>
-            <MenuItem value="0">Waiting</MenuItem>
-            <MenuItem value="1">Paid</MenuItem>
-            <MenuItem value="2">Delivered</MenuItem>
-            <MenuItem value="3">Canceled</MenuItem>
+            <MenuItem value="-1">Tất cả</MenuItem>
+            <MenuItem value="0">Chờ</MenuItem>
+            <MenuItem value="1">Đã thanh toán</MenuItem>
+            <MenuItem value="2">Đã giao</MenuItem>
+            <MenuItem value="3">Đã hủy</MenuItem>
           </Select>
         </FormControl>
         <Box
@@ -124,7 +124,7 @@ const UserOrders = () => {
             variant="contained"
             sx={{ px: "20px" }}
           >
-            Search
+            Tìm
           </Button>
         </Box>
       </Box>
@@ -134,7 +134,7 @@ const UserOrders = () => {
           rows={isFetching ? [] : pageOrders?.response || []}
           getRowId={(row) => row.orderId}
           columns={[
-            { field: "orderCode", headerName: "Order code", width: 100 },
+            { field: "orderCode", headerName: "Mã đơn đặt", width: 100 },
             {
               field: "imageUrl",
               headerName: "Items",
@@ -150,37 +150,37 @@ const UserOrders = () => {
             },
             {
               field: "productName",
-              headerName: "Product Name",
+              headerName: "Tên sản phẩm",
               width: 150,
             },
             {
               field: "quantity",
-              headerName: "Quantity",
+              headerName: "Số lượng",
               width: 85,
             },
             {
               field: "customerName",
-              headerName: "Customer Name",
+              headerName: "Tên khách hàng",
               width: 150,
             },
             {
               field: "phoneNumber",
-              headerName: "phone Number",
+              headerName: "Số điện thoại",
               width: 150,
             },
             {
               field: "address",
-              headerName: "Address ",
+              headerName: "Địa chỉ ",
               width: 150,
             },
             {
               field: "createdDate",
-              headerName: "Created Date ",
+              headerName: "Ngày tạo ",
               width: 170,
             },
             {
               field: "status",
-              headerName: "Status",
+              headerName: "Trạng thái",
               width: 100,
               renderCell: (param) => (
                 <span
@@ -200,7 +200,7 @@ const UserOrders = () => {
             },
             {
               field: "totalMoney",
-              headerName: "Total",
+              headerName: "Tổng",
               width: 120,
               type: "number",
             },

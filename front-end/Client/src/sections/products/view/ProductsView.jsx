@@ -94,7 +94,16 @@ const ProductsView = () => {
               margin: "50px 0px 10px 0px",
             }}
           >
-            <Typography variant="h4" fontWeight={500}>
+            <Typography
+              variant="h4"
+              fontWeight={500}
+              sx={{
+                fontSize: {
+                  xs: "1.25rem",
+                  sm: "2.125rem",
+                },
+              }}
+            >
               Sản phẩm của chúng tôi{" "}
             </Typography>
             <Typography
@@ -170,7 +179,7 @@ const ProductsView = () => {
                   variant="contained"
                   sx={{ px: "20px" }}
                 >
-                  Search
+                  Tìm
                 </Button>
               </Grid>
             </Grid>

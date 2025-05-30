@@ -113,7 +113,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
   const handleUpdate = () => {
     updateOrder(order.orderId, {
       onSuccess: (res) => {
-        toast.success("Update order successfully!");
+        toast.success("Cập nhật đơn hàng thành công!");
         refetch();
       },
     });
@@ -170,14 +170,14 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
 
   return (
     <LoadingComp isLoading={isPendingPayment || isPendingUpdate}>
-      <DialogTitle>Order #{order.orderCode}</DialogTitle>
+      <DialogTitle>Đơn hàng #{order.orderCode}</DialogTitle>
       <DialogContent>
         <Grid container spacing={2}>
           <Grid item sx={{ width: "100%" }} md={6}>
             <TextField
               margin="dense"
               name="customerName"
-              label="Customer Name"
+              label="Họ và tên"
               fullWidth
               value={updatedOrder.customerName || ""}
               disabled={order.status !== 0}
@@ -189,7 +189,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
             <TextField
               margin="dense"
               name="phoneNumber"
-              label="Phone Number"
+              label="Số điện thoại"
               fullWidth
               value={updatedOrder.phoneNumber || ""}
               disabled={order.status !== 0}
@@ -200,7 +200,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
         <TextField
           margin="dense"
           name="address"
-          label="Address"
+          label="Địa chỉ"
           fullWidth
           value={updatedOrder.address || ""}
           disabled={order.status !== 0}
@@ -209,7 +209,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
         <TextField
           margin="dense"
           name="message"
-          label="Message"
+          label="Tin nhắn"
           fullWidth
           value={updatedOrder.message || ""}
           disabled={order.status !== 0}
@@ -221,7 +221,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
             <TextField
               margin="dense"
               name="createdDate"
-              label="Created Date"
+              label="Ngày tạo"
               fullWidth
               value={order.createdDate || ""}
               onChange={handleChange}
@@ -233,7 +233,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
             <TextField
               margin="dense"
               name="createdBy"
-              label="Created By"
+              label="Tạo bởi"
               fullWidth
               value={order.createdBy || ""}
               onChange={handleChange}
@@ -243,7 +243,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
           </Grid>
           <Grid item sx={{ width: "100%" }} md={4}>
             <Box>
-              <Typography variant="caption">Status</Typography>
+              <Typography variant="caption">Trạng thái</Typography>
               <Typography
                 sx={{
                   padding: "8px 40px",
@@ -264,7 +264,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
         <TextField
           margin="dense"
           name="note"
-          label="Note"
+          label="Ghi chú"
           fullWidth
           value={order.note || ""}
           disabled
@@ -274,13 +274,13 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Box sx={{ mt: 2, px: 2 }}>
             <Typography variant="h6" textAlign={"right"} fontWeight={500}>
-              Subtotal:{" "}
+              Tổng cộng:{" "}
               <span style={{ marginLeft: "40px" }}>
                 {formatPrice(caculateTotal())} VNĐ
               </span>
             </Typography>
             <Typography variant="h6" textAlign={"right"} fontWeight={500}>
-              Tax (10%):{" "}
+              Thuế (10%):{" "}
               <span style={{ marginLeft: "40px" }}>
                 {formatPrice(Math.floor(caculateTotal() * 0.1))} VNĐ
               </span>
@@ -293,7 +293,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
               fontWeight={600}
               fontSize={"23px"}
             >
-              Total:{" "}
+              Tổng:{" "}
               <span style={{ marginLeft: "40px" }}>
                 {formatPrice(Math.floor(caculateTotal() * 1.1))} VNĐ
               </span>
@@ -305,7 +305,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
               disabled={order.status !== 0}
               color="success"
             >
-              Pay now
+              Thanh toán ngay
             </Button>
           </Box>
         </Box>
@@ -313,7 +313,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
       <Divider sx={{ my: 2 }} />
       <DialogActions>
         <Button onClick={handleClose} variant="contained" color="primary">
-          Cancel
+          Hủy
         </Button>
         <Button
           onClick={handleSubmit}
@@ -321,7 +321,7 @@ const ModalContent = ({ handleClose, order, userId, refetch }) => {
           color="error"
           disabled={order.status !== 0}
         >
-          Update
+          Sửa
         </Button>
       </DialogActions>
     </LoadingComp>

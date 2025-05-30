@@ -182,13 +182,13 @@ const ProductDetails = ({ productData, setProductData, files, setFiles }) => {
                   (img) => img.productImageId !== image.productImageId
                 ),
               }));
-              toast.success("Image deleted successfully");
+              toast.success("Xóa ảnh thành công");
             },
           }
         );
       } else {
         setFiles((prevFiles) => prevFiles.filter((file) => file !== image));
-        toast.success("Image deleted successfully");
+        toast.success("Xóa ảnh thành công");
       }
     }
     setOpenConfirm({ open: false, image: null });

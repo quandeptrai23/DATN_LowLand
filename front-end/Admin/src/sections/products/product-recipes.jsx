@@ -49,7 +49,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
         (item) => item.materialName !== openConfirmDelete.target
       );
     });
-    toast.success("Delete material successfully");
+    toast.success("Xóa nguyên liệu thành công");
   };
   return (
     <Box sx={{ overflowY: "auto", overflowX: "hidden", mt: 2 }}>

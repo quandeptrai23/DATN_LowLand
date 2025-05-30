@@ -77,7 +77,7 @@ export default function OrderView() {
             >
               <Grid item md={4} xs={12}>
                 <FormControl sx={{ minWidth: "200px", width: "100%" }}>
-                  <InputLabel>Status</InputLabel>
+                  <InputLabel>Trạng thái</InputLabel>
                   <Select
                     value={status}
                     onChange={(e) => {
@@ -87,10 +87,10 @@ export default function OrderView() {
                     label="Status"
                   >
                     <MenuItem value="-1">All</MenuItem>
-                    <MenuItem value="0">Waiting</MenuItem>
-                    <MenuItem value="1">Paid</MenuItem>
-                    <MenuItem value="2">Delivered</MenuItem>
-                    <MenuItem value="3">Canceled</MenuItem>
+                    <MenuItem value="0">Chờ</MenuItem>
+                    <MenuItem value="1">Đã thanh toán</MenuItem>
+                    <MenuItem value="2">Đã giao</MenuItem>
+                    <MenuItem value="3">Đã hủy</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
@@ -103,7 +103,7 @@ export default function OrderView() {
                     setQuery(e.target.value);
                     setPage(1);
                   }}
-                  placeholder="Search orders..."
+                  placeholder="Tìm đơn..."
                   sx={{ width: "100%" }}
                 />
                 <Button
@@ -111,7 +111,7 @@ export default function OrderView() {
                   color="secondary"
                   sx={{ height: "100%" }}
                 >
-                  Search
+                  Tìm
                 </Button>
               </Grid>
             </Grid>

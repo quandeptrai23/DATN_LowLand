@@ -145,7 +145,7 @@ export default function UserPage() {
   const handleSubmitNewUser = () => {
     createAccount(userInfo, {
       onSuccess: () => {
-        toast.success("Create account successfully");
+        toast.success("Tạo tài khoản thành công");
         setOpenAddModal(false);
         setUserInfo(defaultUser);
         refetch();
@@ -156,7 +156,7 @@ export default function UserPage() {
   const handleDeleteAll = () => {
     deleteAccounts(selected, {
       onSuccess: () => {
-        toast.success("Delete accounts successfully");
+        toast.success("Xóa tài khoản thành công");
         setSelected([]);
         refetch();
       },
@@ -166,7 +166,7 @@ export default function UserPage() {
   const handleDeleteUser = (user) => {
     deleteAccount(user.accountId, {
       onSuccess: () => {
-        toast.success("Delete account successfully");
+        toast.success("Xóa tài khoản thành công");
         refetch();
       },
     });

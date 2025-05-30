@@ -56,7 +56,7 @@ const SignUpPageView = () => {
       },
       {
         onSuccess: (res) => {
-          toast.success("Register successfully");
+          toast.success("Đăng ký thành công");
           router.push("/login");
         },
       }
@@ -129,7 +129,7 @@ const SignUpPageView = () => {
                   sx={{ width: "100%", marginBottom: "20px" }}
                   error={username === "" && attempt}
                   helperText={
-                    username === "" && attempt && "Email cannot be empty"
+                    username === "" && attempt && "Email không được để trống"
                   }
                 />
                 <TextField
@@ -153,7 +153,7 @@ const SignUpPageView = () => {
                   sx={{ width: "100%", marginBottom: "20px" }}
                   error={password === "" && attempt}
                   helperText={
-                    password === "" && attempt && "Password cannot be empty"
+                    password === "" && attempt && "Mật khẩu không để trống"
                   }
                 />
                 <TextField
@@ -177,27 +177,31 @@ const SignUpPageView = () => {
                   sx={{ width: "100%", marginBottom: "20px" }}
                   error={confirmPass === "" && attempt}
                   helperText={
-                    confirmPass === "" && attempt && "Password cannot be empty"
+                    confirmPass === "" &&
+                    attempt &&
+                    "Mật khẩu không được để trống"
                   }
                 />
                 <TextField
-                  label="FullName"
+                  label="Họ tên"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   sx={{ width: "100%", marginBottom: "20px" }}
                   error={fullName === "" && attempt}
                   helperText={
-                    fullName === "" && attempt && "FullName cannot be empty"
+                    fullName === "" && attempt && "Họ tên không được để trống"
                   }
                 />
                 <TextField
-                  label="Phone Number"
+                  label="Số điện thoại"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   sx={{ width: "100%", marginBottom: "20px" }}
                   error={phone === "" && attempt}
                   helperText={
-                    phone === "" && attempt && "Phone Number cannot be empty"
+                    phone === "" &&
+                    attempt &&
+                    "Số điện thoại không được để trống"
                   }
                 />
 
@@ -207,24 +211,24 @@ const SignUpPageView = () => {
                   onClick={handleSignUp}
                   type="submit"
                 >
-                  Sign Up
+                  Đăng ký
                 </Button>
               </Stack>
 
               <Typography sx={{ mt: "20px" }}>
-                Clicking on "Sign Up" means you agree to our{" "}
-                <a href="#">terms and conditions</a>
+                Nhấp vào "Đăng ký" có nghĩa là bạn đồng ý với chúng tôi{" "}
+                <a href="#">điều khoản và điều kiện</a>
               </Typography>
               <Typography textAlign={"center"} sx={{ mt: "20px" }}>
-                Already have an account?{" "}
+                Bạn đã có tài khoản?{" "}
                 <Button
                   sx={{ textDecoration: "underline" }}
                   color="secondary"
                   onClick={() => router.replace("/login")}
                 >
-                  Login
+                  Đăng nhập
                 </Button>
-                now!
+                ngay
               </Typography>
             </Grid>
           </Grid>

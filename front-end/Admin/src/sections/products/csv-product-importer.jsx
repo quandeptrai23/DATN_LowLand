@@ -1,13 +1,13 @@
 import {
-    Alert,
-    Box,
-    Button,
-    CircularProgress,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogTitle,
-    Typography
+  Alert,
+  Box,
+  Button,
+  CircularProgress,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Typography,
 } from "@mui/material";
 import Papa from "papaparse";
 import { useState } from "react";
@@ -165,7 +165,7 @@ const CSVProductImporter = ({ onImportComplete }) => {
     // Close the preview and pass the data back
     setPreviewOpen(false);
     onImportComplete(transformedData);
-    toast.success("CSV data processed successfully!");
+    toast.success("Dữ liệu CSV đã được xử lý thành công!");
   };
 
   // Function to fetch and convert an image URL to a File object
@@ -175,7 +175,7 @@ const CSVProductImporter = ({ onImportComplete }) => {
       const blob = await response.blob();
       return new File([blob], fileName, { type: blob.type });
     } catch (error) {
-      console.error("Error converting image URL to File:", error);
+      console.error("Lỗi khi chuyển đổi URL hình ảnh sang File:", error);
       return null;
     }
   };
@@ -268,7 +268,7 @@ const CSVProductImporter = ({ onImportComplete }) => {
         </table>
         {previewData.length > 5 && (
           <Typography sx={{ mt: 2, fontStyle: "italic" }}>
-            Showing 5 of {previewData.length} rows
+            Hiển thị 5 of {previewData.length} hàng
           </Typography>
         )}
       </Box>

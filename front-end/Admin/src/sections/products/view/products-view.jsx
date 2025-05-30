@@ -159,7 +159,7 @@ export default function ProductsView() {
                 width: { xs: "100%", sm: "auto" },
               }}
             >
-             Thêm sản phẩm
+              Thêm sản phẩm
             </Button>
           </Grid>
         </Grid>
@@ -190,7 +190,7 @@ export default function ProductsView() {
           >
             <TextField
               label="Search product"
-              placeholder="Search product"
+              placeholder="Tìm sản phẩm"
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);
@@ -206,7 +206,7 @@ export default function ProductsView() {
                 width: { xs: "100%", md: "auto" },
               }}
             >
-              Search
+              Tìm
             </Button>
           </Grid>
           <Grid item xs={12} md={3} sx={{ mx: 2 }}>
@@ -217,7 +217,7 @@ export default function ProductsView() {
                 display: "flex",
               }}
             >
-              <InputLabel>Active</InputLabel>
+              <InputLabel>Cho phép</InputLabel>
               <Select
                 value={isActive.value || 0}
                 label="Product type"
@@ -229,20 +229,20 @@ export default function ProductsView() {
                   setPage(1);
                 }}
               >
-                <MenuItem value={-1}>All</MenuItem>
+                <MenuItem value={-1}>Tất cả</MenuItem>
                 <MenuItem value={0}>
                   <Iconify
                     icon="zondicons:close-solid"
                     sx={{ color: "#ba1f1d", mr: 1 }}
                   />
-                  Inactive
+                  Không phép
                 </MenuItem>
                 <MenuItem value={1}>
                   <Iconify
                     icon="teenyicons:tick-circle-solid"
                     sx={{ color: "green", mr: 1 }}
                   />
-                  Active
+                  Cho phép
                 </MenuItem>
               </Select>
             </FormControl>
@@ -277,7 +277,7 @@ export default function ProductsView() {
                       p: 5,
                     }}
                   >
-                   Không có sản phẩm nào với &quot;{query}&quot;
+                    Không có sản phẩm nào với &quot;{query}&quot;
                   </Typography>
                   <Image
                     imageURL={"/static/images/404.jpg"}

@@ -110,7 +110,7 @@ const EditorBody = ({ cancel, initBlogDetails, refetch }) => {
     deleteBlog(blogDetails.blogId, {
       onSuccess: () => {
         handleCancel();
-        toast.success("Blog deleted successfully");
+        toast.success("Xóa bài đăng thành công");
       },
     });
     setConfirmDelete(false);
@@ -138,7 +138,7 @@ const EditorBody = ({ cancel, initBlogDetails, refetch }) => {
         {
           onSuccess: () => {
             handleCancel();
-            toast.success("Blog updated successfully");
+            toast.success("Bài đăng cập nhật thành công");
             refetch();
           },
         }
@@ -147,7 +147,7 @@ const EditorBody = ({ cancel, initBlogDetails, refetch }) => {
       uploadBlog(formData, {
         onSuccess: () => {
           handleCancel();
-          toast.success("Blog created successfully");
+          toast.success("Bài đăng được tạo thành công");
         },
       });
     }

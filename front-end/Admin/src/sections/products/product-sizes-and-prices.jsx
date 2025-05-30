@@ -60,7 +60,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
                 item.productDetailsId !== openConfirmDelete.productDetailsId
             );
           });
-          toast.success("Delete size successfully");
+          toast.success("Xóa size thành công");
         },
       });
     } else {
@@ -69,7 +69,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
           (item) => item.sizeName !== openConfirmDelete.sizeName
         );
       });
-      toast.success("Delete size successfully");
+      toast.success("Xóa size thành công");
     }
   };
 

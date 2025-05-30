@@ -263,10 +263,10 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                     }}
                     label="Trạng thái"
                   >
-                    <MenuItem value={0}>Waiting</MenuItem>
-                    <MenuItem value={1}>Paid</MenuItem>
-                    <MenuItem value={2}>Delivered</MenuItem>
-                    <MenuItem value={3}>Canceled</MenuItem>
+                    <MenuItem value={0}>Chờ</MenuItem>
+                    <MenuItem value={1}>Đã thanh toán</MenuItem>
+                    <MenuItem value={2}>Đã giao</MenuItem>
+                    <MenuItem value={3}>Đã hủy</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
