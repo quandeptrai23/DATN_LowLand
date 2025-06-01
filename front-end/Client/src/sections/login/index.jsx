@@ -155,19 +155,19 @@ const LoginView = () => {
               <Grid item sm={1} md={1} sx={{ width: "100%" }}>
                 <Stack component={"form"} onSubmit={handleLogin}>
                   <TextField
-                    label="Username"
+                    label="Email"
                     value={username}
                     onChange={(e) => setUserName(e.target.value)}
                     sx={{ width: "100%", marginBottom: "20px" }}
                     error={username === "" && attemp}
                     helperText={
                       username === "" && attemp
-                        ? "Please enter your username"
+                        ? "Hãy nhập email"
                         : ""
                     }
                   />
                   <TextField
-                    label="Password"
+                    label="Mật khẩu"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type={showPass ? "text" : "password"}
