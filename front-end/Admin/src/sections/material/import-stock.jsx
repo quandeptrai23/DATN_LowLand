@@ -78,30 +78,33 @@ const getPreferredUnit = (unit1, unit2) => {
 
     if (desc1.measure === desc2.measure) {
       const possibilities = convert().possibilities(desc1.measure);
-      
+
       if (possibilities.includes("ml") && desc1.measure === "volume") {
         if (u1 === "ml") return u1;
         if (u2 === "ml") return u2;
-        return convert(1).from(u1).to("ml") > convert(1).from(u2).to("ml") ? u2 : u1;
+        return convert(1).from(u1).to("ml") > convert(1).from(u2).to("ml")
+          ? u2
+          : u1;
       }
-            if (possibilities.includes("g") && desc1.measure === "mass") {
+      if (possibilities.includes("g") && desc1.measure === "mass") {
         if (u1 === "g") return u1;
         if (u2 === "g") return u2;
-        return convert(1).from(u1).to("g") > convert(1).from(u2).to("g") ? u2 : u1;
+        return convert(1).from(u1).to("g") > convert(1).from(u2).to("g")
+          ? u2
+          : u1;
       }
-      
+
       try {
-        const baseUnit = possibilities[0]; 
+        const baseUnit = possibilities[0];
         const value1 = convert(1).from(u1).to(baseUnit);
         const value2 = convert(1).from(u2).to(baseUnit);
-        return value1 > value2 ? u1 : u2; 
+        return value1 > value2 ? u1 : u2;
       } catch (e) {
         return u1;
       }
     }
-  } catch (e) {
-  }
-  return u1; 
+  } catch (e) {}
+  return u1;
 };
 
 const Deltails = ({ id, open, onClose, refetch }) => {
@@ -145,6 +148,17 @@ const Deltails = ({ id, open, onClose, refetch }) => {
     }
   }, [importDetails, id]);
 
+  const isToday = () => {
+    if (!id || !data.importDate) return true;
+    const importDate = new Date(data.importDate);
+    const today = new Date();
+    return (
+      importDate.getFullYear() === today.getFullYear() &&
+      importDate.getMonth() === today.getMonth() &&
+      importDate.getDate() === today.getDate()
+    );
+  };
+
   const handleClose = () => {
     if (open) {
       setData({
@@ -159,6 +173,33 @@ const Deltails = ({ id, open, onClose, refetch }) => {
   };
 
   const handleSave = () => {
+    if (id && !isToday()) {
+      toast.error("Chỉ có thể chỉnh sửa phiếu nhập trong ngày tạo phiếu.");
+      return;
+    }
+
+    if (data.materialsList.length === 0) {
+      toast.error("Vui lòng thêm ít nhất một nguyên vật liệu trước khi lưu.");
+      return;
+    }
+    const invalidMaterials = data.materialsList.filter(
+      (material) =>
+        !material.materialName?.trim() ||
+        !material.unitName?.trim() ||
+        material.quantity === "" ||
+        isNaN(parseFloat(material.quantity)) ||
+        parseFloat(material.quantity) <= 0 ||
+        material.price === "" ||
+        isNaN(parseFloat(material.price)) ||
+        parseFloat(material.price) < 0
+    );
+
+    if (invalidMaterials.length > 0) {
+      toast.error(
+        "Vui lòng điền đầy đủ và hợp lệ các trường: Tên NVL, Đơn vị, Số lượng (>0), và Đơn giá (>=0) cho tất cả nguyên vật liệu."
+      );
+      return;
+    }
     const payload = {
       ...data,
       materialsList: data.materialsList.map((m) => ({
