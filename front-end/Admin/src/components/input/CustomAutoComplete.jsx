@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  Autocomplete,
-  TextField,
-  CircularProgress,
-} from "@mui/material";
+import { useEffect, useState, useRef } from "react";
+import { Autocomplete, TextField, CircularProgress } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { useDebounce } from "src/hooks/use-debounce";
 
@@ -14,19 +10,31 @@ export const CustomAutocomplete = ({
   queryFn,
   onInputChange,
   sx,
-  excludeValues = [], // Mảng các giá trị cần loại bỏ khỏi dropdown
+  excludeValues = [],
 }) => {
   const [focused, setFocused] = useState(false);
   const [query, setQuery] = useState(current?.[labelKey] || "");
   const [selectedOption, setSelectedOption] = useState(current || null);
   const [open, setOpen] = useState(false);
 
-  // Update states when current prop changes
+  const isInitialMount = useRef(true);
+  const prevCurrent = useRef(current);
+
   useEffect(() => {
-    if (current) {
-      setSelectedOption(current);
-      setQuery(current[labelKey] || "");
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      if (!current) return;
     }
+
+    const currentValue = current?.[labelKey] || "";
+    const prevValue = prevCurrent.current?.[labelKey] || "";
+
+    if (currentValue !== prevValue) {
+      setSelectedOption(current || null);
+      setQuery(currentValue);
+    }
+
+    prevCurrent.current = current;
   }, [current, labelKey]);
 
   // Debounced value to limit API calls
@@ -36,23 +44,22 @@ export const CustomAutocomplete = ({
   const { data: rawOptions = [], isLoading: loading } = useQuery({
     queryKey: ["getOptions", { query: queryDebounced }],
     queryFn: () => queryFn({ query: queryDebounced, size: 10 }),
-    enabled: focused, // Chỉ cần focused là đủ, không cần kiểm tra length
+    enabled: focused,
     refetchOnWindowFocus: false,
   });
 
   // Lọc bỏ các option đã được chọn/sử dụng
-  const options = rawOptions.filter(option => {
+  const options = rawOptions.filter((option) => {
     const optionValue = option[labelKey];
-    return !excludeValues.some(excludeVal => {
-      // So sánh theo labelKey nếu excludeVal là object, hoặc trực tiếp nếu là string
-      const excludeValue = typeof excludeVal === 'object' ? excludeVal[labelKey] : excludeVal;
+    return !excludeValues.some((excludeVal) => {
+      const excludeValue =
+        typeof excludeVal === "object" ? excludeVal[labelKey] : excludeVal;
       return optionValue === excludeValue;
     });
   });
 
   const handleChange = (event, newValue) => {
     if (newValue?.inputValue) {
-      // Handle custom input value
       const customOption = { [labelKey]: newValue[labelKey] };
       setSelectedOption(customOption);
       setQuery(newValue[labelKey]);
@@ -61,7 +68,6 @@ export const CustomAutocomplete = ({
         option: customOption,
       });
     } else {
-      // Handle selected option or null
       setSelectedOption(newValue || null);
       setQuery(newValue?.[labelKey] || "");
       onInputChange({
@@ -83,12 +89,14 @@ export const CustomAutocomplete = ({
   return (
     <Autocomplete
       value={selectedOption || null}
-      open={open && focused} // Hiển thị khi open và focused
+      open={open && focused}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
       onChange={handleChange}
       isOptionEqualToValue={(option, value) => {
-        return option[labelKey] === value[labelKey] || option[labelKey] === value;
+        return (
+          option[labelKey] === value[labelKey] || option[labelKey] === value
+        );
       }}
       filterOptions={(options, params) => {
         const filtered = options.filter((option) =>
@@ -97,8 +105,10 @@ export const CustomAutocomplete = ({
             .includes(params.inputValue.toLowerCase())
         );
 
-        // Add option to create new entry if input doesn't match any existing option
-        if (params.inputValue !== "" && !filtered.some(opt => opt[labelKey] === params.inputValue)) {
+        if (
+          params.inputValue !== "" &&
+          !filtered.some((opt) => opt[labelKey] === params.inputValue)
+        ) {
           filtered.push({
             [labelKey]: params.inputValue,
             inputValue: `Thêm "${params.inputValue}"`,
@@ -126,11 +136,10 @@ export const CustomAutocomplete = ({
           autoComplete="off"
           onFocus={() => {
             setFocused(true);
-            setOpen(true); // Mở dropdown ngay khi focus
+            setOpen(true);
           }}
           onBlur={() => {
             setFocused(false);
-            // Delay để cho phép click vào option
             setTimeout(() => setOpen(false), 150);
           }}
           InputProps={{

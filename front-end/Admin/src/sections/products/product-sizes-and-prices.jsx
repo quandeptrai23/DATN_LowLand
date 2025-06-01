@@ -44,6 +44,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
         },
       ];
     });
+    // Reset form sau khi thêm thành công
     setNewSizeName("");
     setNewSizePrice("");
     setNewSizeSalePrice("");
@@ -73,6 +74,15 @@ const SizeAndPrice = ({ details, setDetails }) => {
     }
   };
 
+  // Hàm để cập nhật size name cho từng item cụ thể
+  const handleSizeNameChange = (index, value) => {
+    setDetails((prev) => {
+      return prev.map((item, i) =>
+        i === index ? { ...item, sizeName: value } : item
+      );
+    });
+  };
+
   return (
     <Box sx={{ overflowY: "auto", overflowX: "hidden" }}>
       <Box sx={{ m: 2 }}>
@@ -91,7 +101,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
             >
               <Grid item xs={12} md={5} sx={{ width: "100%" }}>
                 <CustomAutocomplete
-                  current={sz.sizeName}
+                  current={{ sizeName: sz.sizeName }}
                   label={"Size"}
                   sx={{ width: "100%" }}
                   labelKey={"sizeName"}
@@ -103,7 +113,8 @@ const SizeAndPrice = ({ details, setDetails }) => {
                     );
                   }}
                   onInputChange={(val) => {
-                    setNewSizeName(val.value);
+                    // ✅ Cập nhật size cụ thể thay vì newSizeName
+                    handleSizeNameChange(index, val.value);
                   }}
                 />
               </Grid>
@@ -116,8 +127,8 @@ const SizeAndPrice = ({ details, setDetails }) => {
                   type="number"
                   onChange={(e) =>
                     setDetails((prev) => {
-                      return prev.map((item) =>
-                        item.productDetailsId === sz.productDetailsId
+                      return prev.map((item, i) =>
+                        i === index
                           ? { ...item, price: Number(e.target.value) }
                           : item
                       );
@@ -131,8 +142,8 @@ const SizeAndPrice = ({ details, setDetails }) => {
                   fullWidth
                   onChange={(e) =>
                     setDetails((prev) => {
-                      return prev.map((item) =>
-                        item.productDetailsId === sz.productDetailsId
+                      return prev.map((item, i) =>
+                        i === index
                           ? { ...item, salePrice: Number(e.target.value) }
                           : item
                       );
@@ -154,15 +165,23 @@ const SizeAndPrice = ({ details, setDetails }) => {
           ))}
         </Box>
 
+        {/* Form thêm mới - tách biệt hoàn toàn */}
         <Grid container gap={2}>
           <Grid item sm={12} md={5} sx={{ width: "100%" }}>
             <CustomAutocomplete
-              current={newSizeName}
+              current={newSizeName ? { sizeName: newSizeName } : null} // ✅ Truyền object hoặc null
               label={"Loại size"}
               sx={{ width: "100%" }}
               labelKey={"sizeName"}
-              queryFn={queryFn}
+              queryFn={async () => {
+                const allSizes = await queryFn();
+                const selectedSizeNames = details.map((d) => d.sizeName);
+                return allSizes.filter(
+                  (s) => !selectedSizeNames.includes(s.sizeName)
+                );
+              }}
               onInputChange={(val) => {
+                // ✅ Chỉ cập nhật state cho form thêm mới
                 setNewSizeName(val.value);
               }}
             />
