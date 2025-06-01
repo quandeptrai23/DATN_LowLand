@@ -27,12 +27,12 @@ const SizeAndPrice = ({ details, setDetails }) => {
   const handleAdd = () => {
     setDetails((prev) => {
       if (prev.find((sz) => sz.sizeName === newSizeName)) {
-        toast.error("Size already exists");
+        toast.error("Đã có size này");
         return prev;
       }
 
       if (newSizeName === "" || newSizePrice === "") {
-        toast.error("Please fill in all fields");
+        toast.error("Hãy điền tất các trường");
         return prev;
       }
       return [
@@ -110,7 +110,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
 
               <Grid item sm={12} md={5} sx={{ display: "flex", gap: 2 }}>
                 <TextField
-                  label="Size Price"
+                  label="Giá size"
                   value={sz.price || ""}
                   fullWidth
                   type="number"
@@ -125,7 +125,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
                   }
                 />
                 <TextField
-                  label="Sale Price"
+                  label="Giảm giá"
                   value={sz.salePrice || ""}
                   type="number"
                   fullWidth
@@ -147,7 +147,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
                   sx={{ width: "100%", height: "100%" }}
                   onClick={() => setOpenConfirmDelete(sz)}
                 >
-                  Delete
+                  Xóa
                 </Button>
               </Grid>
             </Grid>
@@ -158,7 +158,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
           <Grid item sm={12} md={5} sx={{ width: "100%" }}>
             <CustomAutocomplete
               current={newSizeName}
-              label={"New Size"}
+              label={"Loại size"}
               sx={{ width: "100%" }}
               labelKey={"sizeName"}
               queryFn={queryFn}
@@ -170,7 +170,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
 
           <Grid item sm={12} md={5} sx={{ display: "flex", gap: 2 }}>
             <TextField
-              label="New Size Price"
+              label="Giá gốc"
               value={newSizePrice}
               type="number"
               onChange={(e) => {
@@ -179,7 +179,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
               fullWidth
             />
             <TextField
-              label="New Size Sale Price"
+              label="Giá giảm giá"
               value={newSizeSalePrice}
               type="number"
               onChange={(e) => {
@@ -195,7 +195,7 @@ const SizeAndPrice = ({ details, setDetails }) => {
               onClick={handleAdd}
               sx={{ width: "100%", height: "100%" }}
             >
-              Add
+              Thêm
             </Button>
           </Grid>
         </Grid>

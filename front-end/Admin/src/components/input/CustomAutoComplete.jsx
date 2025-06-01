@@ -1,12 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import {
-  Box,
+  Autocomplete,
   TextField,
-  InputAdornment,
   CircularProgress,
-  Button,
 } from "@mui/material";
-import Iconify from "../iconify";
 import { useQuery } from "@tanstack/react-query";
 import { useDebounce } from "src/hooks/use-debounce";
 
@@ -17,136 +14,156 @@ export const CustomAutocomplete = ({
   queryFn,
   onInputChange,
   sx,
+  excludeValues = [], // Mảng các giá trị cần loại bỏ khỏi dropdown
 }) => {
-  const [value, setValue] = useState(current || "");
   const [focused, setFocused] = useState(false);
-  const inputRef = useRef(null);
-  
-  // Update value when current prop changes
+  const [query, setQuery] = useState(current?.[labelKey] || "");
+  const [selectedOption, setSelectedOption] = useState(current || null);
+  const [open, setOpen] = useState(false);
+
+  // Update states when current prop changes
   useEffect(() => {
-    setValue(current || "");
-  }, [current]);
+    if (current) {
+      setSelectedOption(current);
+      setQuery(current[labelKey] || "");
+    }
+  }, [current, labelKey]);
 
   // Debounced value to limit API calls
-  const queryDebounced = useDebounce(value, 300);
+  const queryDebounced = useDebounce(query, 300);
 
   // Query for fetching options
-  const { data: options = [], isLoading: loading } = useQuery({
+  const { data: rawOptions = [], isLoading: loading } = useQuery({
     queryKey: ["getOptions", { query: queryDebounced }],
     queryFn: () => queryFn({ query: queryDebounced, size: 10 }),
-    enabled: !!focused, // Convert to boolean with !!
+    enabled: focused, // Chỉ cần focused là đủ, không cần kiểm tra length
     refetchOnWindowFocus: false,
   });
 
-  const handleInputChange = (value) => {
-    setValue(value);
-    onInputChange({
-      value: value,
-      option: options.find((o) => o[labelKey] === value),
+  // Lọc bỏ các option đã được chọn/sử dụng
+  const options = rawOptions.filter(option => {
+    const optionValue = option[labelKey];
+    return !excludeValues.some(excludeVal => {
+      // So sánh theo labelKey nếu excludeVal là object, hoặc trực tiếp nếu là string
+      const excludeValue = typeof excludeVal === 'object' ? excludeVal[labelKey] : excludeVal;
+      return optionValue === excludeValue;
     });
-  };
+  });
 
-  const handleBlur = () => {
-    // Short delay to allow option click to register before dropdown disappears
-    setTimeout(() => {
-      setFocused(false);
-    }, 150);
-  };
-
-  const handleFocus = () => {
-    setFocused(true);
-  };
-
-  const handleDropdownClick = () => {
-    // Toggle dropdown visibility
-    if (focused) {
-      setFocused(false);
+  const handleChange = (event, newValue) => {
+    if (newValue?.inputValue) {
+      // Handle custom input value
+      const customOption = { [labelKey]: newValue[labelKey] };
+      setSelectedOption(customOption);
+      setQuery(newValue[labelKey]);
+      onInputChange({
+        value: newValue[labelKey],
+        option: customOption,
+      });
     } else {
-      setFocused(true);
-      // Focus the input to ensure keyboard accessibility
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
+      // Handle selected option or null
+      setSelectedOption(newValue || null);
+      setQuery(newValue?.[labelKey] || "");
+      onInputChange({
+        value: newValue?.[labelKey] || "",
+        option: newValue,
+      });
     }
   };
 
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value;
+    setQuery(inputValue);
+    onInputChange({
+      value: inputValue,
+      option: options.find((o) => o[labelKey] === inputValue),
+    });
+  };
+
   return (
-    <Box sx={{ position: "relative" }}>
-      <TextField
-        value={value}
-        name={label}
-        label={label}
-        autoComplete="off"
-        inputRef={inputRef}
-        sx={{ minWidth: 150, ...sx }}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onChange={(e) => handleInputChange(e.target.value)}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <Box 
-                onClick={handleDropdownClick}
-                sx={{ cursor: "pointer", padding: "8px", display: "flex" }}
-              >
-                <Iconify icon={focused ? "fe:drop-up" : "fe:drop-down"} />
-              </Box>
-            </InputAdornment>
-          ),
-        }}
-      />
-      {focused && (
-        <Box
-          sx={{
-            position: "absolute",
-            top: "100%",
-            left: 0,
-            width: "100%",
-            borderRadius: "4px",
-            boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
-            backgroundColor: "white",
-            zIndex: 1000,
-            mt: 1,
-            display: "flex",
-            flexDirection: "column",
-            gap: 1,
-            maxHeight: "250px",
-            overflowY: "auto",
-            border: "1px solid #e0e0e0",
+    <Autocomplete
+      value={selectedOption || null}
+      open={open && focused} // Hiển thị khi open và focused
+      onOpen={() => setOpen(true)}
+      onClose={() => setOpen(false)}
+      onChange={handleChange}
+      isOptionEqualToValue={(option, value) => {
+        return option[labelKey] === value[labelKey] || option[labelKey] === value;
+      }}
+      filterOptions={(options, params) => {
+        const filtered = options.filter((option) =>
+          option[labelKey]
+            ?.toLowerCase()
+            .includes(params.inputValue.toLowerCase())
+        );
+
+        // Add option to create new entry if input doesn't match any existing option
+        if (params.inputValue !== "" && !filtered.some(opt => opt[labelKey] === params.inputValue)) {
+          filtered.push({
+            [labelKey]: params.inputValue,
+            inputValue: `Thêm "${params.inputValue}"`,
+          });
+        }
+        return filtered;
+      }}
+      clearOnBlur
+      options={options || []}
+      getOptionLabel={(option) => {
+        if (typeof option === "string") {
+          return option;
+        }
+        if (option.inputValue) {
+          return option.inputValue;
+        }
+        return option[labelKey] || "";
+      }}
+      loading={loading}
+      sx={{ minWidth: 150, ...sx }}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label={label}
+          autoComplete="off"
+          onFocus={() => {
+            setFocused(true);
+            setOpen(true); // Mở dropdown ngay khi focus
           }}
-        >
-          {loading ? (
-            <Box sx={{ display: "flex", justifyContent: "center", p: 2 }}>
-              <CircularProgress size={24} />
-            </Box>
-          ) : options.length > 0 ? (
-            options.map((option, index) => (
-              <Button
-                key={index}
-                variant="text"
-                color="primary"
-                sx={{ 
-                  width: "100%", 
-                  justifyContent: "flex-start", 
-                  textAlign: "left",
-                  py: 1,
-                  px: 2
-                }}
-                onClick={() => {
-                  handleInputChange(option[labelKey] || value);
-                  setFocused(false);
-                }}
-              >
-                {option[labelKey]}
-              </Button>
-            ))
-          ) : (
-            <Box sx={{ p: 2, textAlign: "center", color: "text.secondary" }}>
-              Không tìm thấy kết quả
-            </Box>
-          )}
-        </Box>
+          onBlur={() => {
+            setFocused(false);
+            // Delay để cho phép click vào option
+            setTimeout(() => setOpen(false), 150);
+          }}
+          InputProps={{
+            ...params.InputProps,
+            endAdornment: (
+              <>
+                {loading ? (
+                  <CircularProgress color="inherit" size={20} />
+                ) : null}
+                {params.InputProps.endAdornment}
+              </>
+            ),
+          }}
+          onChange={handleInputChange}
+        />
       )}
-    </Box>
+      renderOption={(props, option) => {
+        const { key, ...optionProps } = props;
+        return (
+          <li
+            key={key}
+            {...optionProps}
+            style={{
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              padding: "8px 12px",
+              margin: "2px 0",
+            }}
+          >
+            {option.inputValue ? option.inputValue : option[labelKey]}
+          </li>
+        );
+      }}
+    />
   );
 };

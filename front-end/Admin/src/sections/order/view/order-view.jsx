@@ -44,19 +44,19 @@ export default function OrderView() {
 
   const orderStatus = {
     0: {
-      value: "WAITING",
+      value: "Đang chờ",
       color: "#FF9800",
     },
     1: {
-      value: "PAID",
+      value: "Đã thanh toán",
       color: "#2196F3",
     },
     2: {
-      value: "DELIVERED",
+      value: "Đã giao",
       color: "#4CAF50",
     },
     3: {
-      value: "CANCELED",
+      value: "Đã huỷ",
       color: "#F44336",
     },
   };
@@ -64,7 +64,7 @@ export default function OrderView() {
   return (
     <Container>
       <Typography variant="h4" sx={{ mb: 5 }}>
-        Order
+        Đơn đặt hàng
       </Typography>
       <Paper sx={{ padding: "25px", width: "100%" }}>
         <Grid container spacing={{ md: 3 }}>
@@ -86,7 +86,7 @@ export default function OrderView() {
                     }}
                     label="Status"
                   >
-                    <MenuItem value="-1">All</MenuItem>
+                    <MenuItem value="-1">Tất cả</MenuItem>
                     <MenuItem value="0">Chờ</MenuItem>
                     <MenuItem value="1">Đã thanh toán</MenuItem>
                     <MenuItem value="2">Đã giao</MenuItem>

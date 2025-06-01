@@ -7,8 +7,8 @@ import AppWebsiteVisits from "./app-website-visits";
 
 const TopSale = () => {
   const { data: topSale } = useQuery({
-    queryKey: ["getTopSale", { top: 10 }],
-    queryFn: () => chartAPI.getTopSale({ topProduct: 10 }),
+    queryKey: ["getTopSale", { top: 8 }],
+    queryFn: () => chartAPI.getTopSale({ topProduct: 8 }),
   });
   return (
     <Box sx={{ mt: 3 }}>

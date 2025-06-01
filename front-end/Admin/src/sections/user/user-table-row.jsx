@@ -59,7 +59,7 @@ export default function UserTableRow({
 
         <TableCell>{email}</TableCell>
         <TableCell>{full_name}</TableCell>
-        <TableCell>{role}</TableCell>
+        {/* <TableCell>{role}</TableCell> */}
         <TableCell>{gender}</TableCell>
         <TableCell>{phone_number}</TableCell>
         <TableCell>

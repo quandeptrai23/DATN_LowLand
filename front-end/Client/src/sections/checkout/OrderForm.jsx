@@ -94,7 +94,7 @@ const OrderForm = ({ data, setOpen, userData, setOrderId, setAttempt }) => {
                 Ghi chú:
               </Typography>
               <TextField
-                label="Message for us"
+                label="Gửi tin nhắn cho chúng tôi"
                 variant="standard"
                 value={order.message}
                 onChange={(e) =>

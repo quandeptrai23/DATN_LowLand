@@ -10,9 +10,9 @@ import {
 const ConfirmDelete = ({ open, onClose, onDelete }) => {
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Confirm Deletion</DialogTitle>
+      <DialogTitle>Xác nhận xóa</DialogTitle>
       <DialogContent>
-        <Typography>Are you sure you want to delete this?</Typography>
+        <Typography>Bạn có chắc chắn muốn xóa nó ?</Typography>
         <Box
           sx={{
             marginTop: 2,
@@ -26,10 +26,10 @@ const ConfirmDelete = ({ open, onClose, onDelete }) => {
             onClick={onClose}
             sx={{ mr: 1 }}
           >
-            No
+            Không
           </Button>
           <Button variant="contained" color="error" onClick={onDelete}>
-            Yes
+            Có
           </Button>
         </Box>
       </DialogContent>

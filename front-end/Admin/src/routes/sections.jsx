@@ -23,6 +23,10 @@ export const routes = createBrowserRouter([
       {
         element: <ProtectedRoute />,
         children: [
+          {
+            index: true,
+            element: <Navigate to="/dashboard" replace />,
+          },
           { path: "dashboard", element: <IndexPage />, index: true },
           { path: "users", element: <UserPage /> },
           { path: "products", element: <ProductsPage /> },

@@ -213,7 +213,7 @@ export default function UserPage() {
   return (
     <Container>
       <Typography variant="h4" sx={{ mb: 5 }}>
-        Users
+        Người dùng
       </Typography>
       <Card
         mb={5}
@@ -234,7 +234,7 @@ export default function UserPage() {
             allowScrollButtonsMobile
             aria-label="scrollable force tabs example"
           >
-            <Tab label="Admin" />
+            <Tab label="Người quản lý" />
             <Tab label="Nhân viên" />
             <Tab label="Khách hàng" />
           </Tabs>
@@ -282,7 +282,7 @@ export default function UserPage() {
                   { id: "avatarUrl", label: "Avatar" },
                   { id: "email", label: "Email" },
                   { id: "full_name", label: "Họ và tên" },
-                  { id: "role", label: "Quyền" },
+                  // { id: "role", label: "Quyền" },
                   { id: "gender", label: "Giới tính" },
                   { id: "phone_number", label: "Số điện thoại" },
                   { id: "is_active", label: "Trạng thái" },
@@ -300,8 +300,8 @@ export default function UserPage() {
                       key={row.accountId}
                       email={row.email}
                       full_name={row.fullName}
-                      role={row.role}
-                      gender={{ 1: "Male", 0: "Female" }[row.gender]}
+                      // role={row.role}
+                      gender={{ 1: "Nam", 0: "Nữ" }[row.gender]}
                       phone_number={row.phoneNumber}
                       avatarUrl={row.imageURL}
                       selected={selected.indexOf(row.accountId) !== -1}
@@ -352,7 +352,7 @@ export default function UserPage() {
 
       {/* Add User Modal */}
       <Dialog open={openAddModal} onClose={() => setOpenAddModal(false)}>
-        <DialogTitle>New {tabValue?.role}</DialogTitle>
+        <DialogTitle>Thêm mới</DialogTitle>
         <form>
           <DialogContent>
             <TextField

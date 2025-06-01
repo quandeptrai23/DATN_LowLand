@@ -33,7 +33,7 @@ const Stuff = () => {
           icon: <Person fontSize="large" />,
         },
         {
-          title: "Đơn đặt hàng trong tháng",
+          title: "Đơn đặt hàng cho tới hiện tại",
           total: stuffs?.orderInMonth,
           icon: <AlignHorizontalRightOutlined fontSize="large" />,
         },

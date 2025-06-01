@@ -32,7 +32,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
             />
             <TextField
               fullWidth
-              label="Full Name"
+              label="Họ tên"
               value={editData.fullName}
               sx={{ mt: 2 }}
               onChange={(e) =>
@@ -48,7 +48,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
                 labelId="demo-simple-select-label2"
                 value={editData.gender}
                 name="gender"
-                label="Gender"
+                label="Giới tính"
                 onChange={(e) => {
                   setEditData((prev) => ({
                     ...prev,
@@ -75,7 +75,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
 
             <TextField
               fullWidth
-              label="Location"
+              label="Địa điểm"
               value={editData.address}
               onChange={(e) =>
                 setEditData((prev) => ({ ...prev, address: e.target.value }))
@@ -85,7 +85,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
 
             <TextField
               fullWidth
-              label="Position"
+              label="Vị trí"
               value={editData?.position || ""}
               onChange={(e) =>
                 setEditData((prev) => ({ ...prev, position: e.target.value }))
@@ -95,7 +95,7 @@ const EditTab = ({ editData, setEditData, onSubmit, disable }) => {
 
             <TextField
               fullWidth
-              label="Description"
+              label="Chi tiết"
               value={editData?.description || ""}
               onChange={(e) =>
                 setEditData((prev) => ({

@@ -54,7 +54,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
   return (
     <Box sx={{ overflowY: "auto", overflowX: "hidden", mt: 2 }}>
       <Typography fontWeight={700} sx={{ ml: 2, mb: 1 }}>
-        Material list:
+        Danh sách nguyên liệu:
       </Typography>
       <Box sx={{ m: 2 }}>
         {recipes?.map((material) => (
@@ -68,7 +68,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
           >
             <Grid item xs={12} md={5} sx={{ width: "100%" }}>
               <CustomAutocomplete
-                label={"Material"}
+                label={"Nguyên liệu"}
                 queryFn={queryFn}
                 labelKey={"materialName"}
                 sx={{ width: "100%" }}
@@ -90,7 +90,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
             </Grid>
             <Grid item sm={12} md={5} sx={{ display: "flex", gap: 2 }}>
               <TextField
-                label="Quantity"
+                label="Số lượng"
                 value={material.quantity}
                 fullWidth
                 onChange={(e) => {
@@ -105,7 +105,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
                 type="number"
               />
               <TextField
-                label="Unit name"
+                label="Đơn vị"
                 disabled
                 fullWidth
                 type="text"
@@ -119,7 +119,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
                 sx={{ width: "100%", height: "100%" }}
                 onClick={() => handleDelete(material.materialName)}
               >
-                Delete
+                Xóa
               </Button>
             </Grid>
           </Grid>
@@ -128,7 +128,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
         <Grid container gap={2}>
           <Grid item sm={12} md={5} sx={{ width: "100%" }}>
             <CustomAutocomplete
-              label={"Material"}
+              label={"Nguyên liệu"}
               queryFn={queryFn}
               labelKey={"materialName"}
               sx={{ width: "100%" }}
@@ -144,7 +144,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
           </Grid>
           <Grid item sm={12} md={5} sx={{ display: "flex", gap: 2 }}>
             <TextField
-              label="Quantity"
+              label="Số lượng"
               type="number"
               value={newRecipe.quantity}
               onChange={(e) =>
@@ -156,7 +156,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
               fullWidth
             />
             <TextField
-              label="Unit name"
+              label="Đơn vị"
               value={newRecipe.unitName}
               disabled
               fullWidth
@@ -169,7 +169,7 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
               onClick={handleAdd}
               sx={{ width: "100%", height: "100%" }}
             >
-              Add
+              Thêm
             </Button>
           </Grid>
         </Grid>

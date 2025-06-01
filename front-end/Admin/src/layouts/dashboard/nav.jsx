@@ -57,7 +57,7 @@ export default function Nav({ openNav, onCloseNav }) {
         </Typography>
 
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          {account.role}
+          {/* {account.role} */}
         </Typography>
       </Box>
     </Box>
@@ -120,7 +120,7 @@ export default function Nav({ openNav, onCloseNav }) {
       >
         <Logo />
         <Typography sx={{ ml: 2, fontSize: "19px !important" }} variant="h1">
-          Lowland Admin
+          Lowland 
         </Typography>
       </Box>
 

@@ -78,16 +78,16 @@ const AddProductModal = ({ open, onClose, refetch }) => {
             flexDirection: "column",
           }}
         >
-          <DialogTitle>Sửa sản phẩm</DialogTitle>
+          <DialogTitle>Thông tin sản phẩm</DialogTitle>
 
           <Tabs
             value={currentTab}
             onChange={(e, val) => setCurrentTab(val)}
             aria-label="Product Details Tabs"
           >
-            <Tab label="Details" value={0} />
-            <Tab label="Sizes & Prices" value={1} />
-            <Tab label="Materials" value={2} />
+            <Tab label="Chi tiết" value={0} />
+            <Tab label="Size và giá" value={1} />
+            <Tab label="Nguyên liệu" value={2} />
           </Tabs>
 
           {currentTab === 0 && details && productData && (

@@ -77,27 +77,31 @@ const getPreferredUnit = (unit1, unit2) => {
     const desc2 = convert().describe(u2);
 
     if (desc1.measure === desc2.measure) {
-      // Cùng loại đơn vị (khối lượng, thể tích,...)
-      // Ưu tiên đơn vị nhỏ hơn hoặc đơn vị đã tồn tại
       const possibilities = convert().possibilities(desc1.measure);
-      if (
-        possibilities.includes("ml") &&
-        (u1 === "ml" || u2 === "ml") &&
-        desc1.measure === "volume"
-      )
-        return "ml";
-      if (
-        possibilities.includes("g") &&
-        (u1 === "g" || u2 === "g") &&
-        desc1.measure === "mass"
-      )
-        return "g";
-      return u1; // Mặc định giữ lại đơn vị của item đã có
+      
+      if (possibilities.includes("ml") && desc1.measure === "volume") {
+        if (u1 === "ml") return u1;
+        if (u2 === "ml") return u2;
+        return convert(1).from(u1).to("ml") > convert(1).from(u2).to("ml") ? u2 : u1;
+      }
+            if (possibilities.includes("g") && desc1.measure === "mass") {
+        if (u1 === "g") return u1;
+        if (u2 === "g") return u2;
+        return convert(1).from(u1).to("g") > convert(1).from(u2).to("g") ? u2 : u1;
+      }
+      
+      try {
+        const baseUnit = possibilities[0]; 
+        const value1 = convert(1).from(u1).to(baseUnit);
+        const value2 = convert(1).from(u2).to(baseUnit);
+        return value1 > value2 ? u1 : u2; 
+      } catch (e) {
+        return u1;
+      }
     }
   } catch (e) {
-    // Một trong các đơn vị không hợp lệ với thư viện hoặc khác loại
   }
-  return u1; // Trả về đơn vị đầu tiên nếu không chuyển đổi được
+  return u1; 
 };
 
 const Deltails = ({ id, open, onClose, refetch }) => {
@@ -230,9 +234,6 @@ const Deltails = ({ id, open, onClose, refetch }) => {
                 let currentMaterials = [...prevData.materialsList];
                 let csvEffectiveSupplierName = prevData.supplierName;
                 let csvEffectiveDescription = prevData.description;
-
-                // 1. Trích xuất thông tin chung (Nhà cung cấp, Mô tả) từ CSV
-                // Ưu tiên dòng đầu tiên không có materialName nhưng có supplierName hoặc description
                 for (const row of results.data) {
                   const currentMaterialName = row.materialName?.trim();
                   const currentSupplierName = row.supplierName?.trim();

@@ -152,21 +152,21 @@ Thông tin người nhận            </Typography>
                   error={attempt && !phoneNumber}
                   helperText={
                     attempt && !phoneNumber
-                      ? "Please enter receiver's phone number"
+                      ? "Vui lòng nhập số điện thoại"
                       : ""
                   }
                   sx={{ width: "100%" }}
                 ></TextField>
               </Box>
               <Box sx={{ mr: 3, width: { xs: "100%", lg: "350px" } }}>
-                <Typography sx={{ fontWeight: "600" }}>Address: </Typography>
+                <Typography sx={{ fontWeight: "600" }}>Địa chỉ: </Typography>
                 <TextField
                   color={"secondary"}
                   value={address || ""}
                   onChange={(e) => setAddress(e.target.value)}
                   error={attempt && !address}
                   helperText={
-                    attempt && !address ? "Please enter receiver's address" : ""
+                    attempt && !address ? "Vui lòng nhập địa chỉ" : ""
                   }
                   sx={{ width: "100%" }}
                 ></TextField>

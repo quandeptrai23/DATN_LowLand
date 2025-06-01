@@ -67,7 +67,7 @@ const Revenue = () => {
         {totalMoneyInMonth ? (
           <ChartTotalMoney
             title="Doanh thu hàng tháng"
-            subheader="Doanh thu hàng ngày trong tháng"
+            subheader="Doanh thu các ngày trong tháng"
             chart={{
               labels: totalMoneyInMonth?.map((item) =>
                 item.dayInMonth ? item.dayInMonth.toString() : "N/A"

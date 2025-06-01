@@ -150,6 +150,19 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
     });
   };
 
+  // Helper function để tạo style cho disabled fields
+  const getDisabledFieldStyle = (isDisabled) => ({
+    '& .MuiInputBase-root': {
+      '&.Mui-disabled': {
+        backgroundColor: 'transparent',
+        '& .MuiInputBase-input': {
+          color: 'rgba(0, 0, 0, 0.6)',
+          WebkitTextFillColor: 'rgba(0, 0, 0, 0.6)',
+        }
+      }
+    }
+  });
+
   return (
     <>
       {order && (
@@ -171,7 +184,10 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   onChange={(e) =>
                     setOrder({ ...order, customerName: e.target.value })
                   }
-                  sx={{ mr: 2 }}
+                  sx={{ 
+                    mr: 2,
+                    ...getDisabledFieldStyle(orderDetails.status === 3 || orderDetails.status === 2)
+                  }}
                 />
               </Grid>
               <Grid item sx={{ width: "100%" }} md={6}>
@@ -187,6 +203,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   onChange={(e) =>
                     setOrder({ ...order, phoneNumber: e.target.value })
                   }
+                  sx={getDisabledFieldStyle(orderDetails.status === 3 || orderDetails.status === 2)}
                 />
               </Grid>
             </Grid>
@@ -198,6 +215,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
               value={order.address || ""}
               disabled={orderDetails.status === 3 || orderDetails.status === 2}
               onChange={(e) => setOrder({ ...order, address: e.target.value })}
+              sx={getDisabledFieldStyle(orderDetails.status === 3 || orderDetails.status === 2)}
             />
             <TextField
               margin="dense"
@@ -209,6 +227,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
               onChange={(e) => {
                 setOrder({ ...order, message: e.target.value });
               }}
+              sx={getDisabledFieldStyle(orderDetails.status === 3 || orderDetails.status === 2)}
             />
             <Grid container spacing={2}>
               {/* createdDate, createdBy, status in 1 row */}
@@ -220,7 +239,10 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   fullWidth
                   value={order.createdDate || ""}
                   disabled
-                  sx={{ mr: 2 }}
+                  sx={{ 
+                    mr: 2,
+                    ...getDisabledFieldStyle(true)
+                  }}
                 />
               </Grid>
               <Grid item sx={{ width: "100%" }} md={4}>
@@ -231,7 +253,10 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   fullWidth
                   value={order.createdBy || ""}
                   disabled
-                  sx={{ mr: 2 }}
+                  sx={{ 
+                    mr: 2,
+                    ...getDisabledFieldStyle(true)
+                  }}
                 />
               </Grid>
 
@@ -258,8 +283,16 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                       }))
                     }
                     sx={{
-                      backgroundColor: `${orderStatus[order.status].color}`,
-                      color: "white !important",
+                      backgroundColor: (orderDetails.status === 3 || orderDetails.status === 2) 
+                        ? 'transparent' 
+                        : `${orderStatus[order.status].color}`,
+                      color: (orderDetails.status === 3 || orderDetails.status === 2)
+                        ? 'rgba(0, 0, 0, 0.6) !important'
+                        : 'white !important',
+                      '&.Mui-disabled': {
+                        backgroundColor: 'transparent',
+                        color: 'rgba(0, 0, 0, 0.6) !important',
+                      }
                     }}
                     label="Trạng thái"
                   >
@@ -279,7 +312,10 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   fullWidth
                   value={order.updatedDate || ""}
                   disabled
-                  sx={{ mr: 2 }}
+                  sx={{ 
+                    mr: 2,
+                    ...getDisabledFieldStyle(true)
+                  }}
                 />
               </Grid>
               <Grid item sx={{ width: "100%" }} md={6}>
@@ -290,7 +326,10 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   fullWidth
                   value={order.updatedBy || ""}
                   disabled
-                  sx={{ mr: 2 }}
+                  sx={{ 
+                    mr: 2,
+                    ...getDisabledFieldStyle(true)
+                  }}
                 />
               </Grid>
             </Grid>
@@ -304,6 +343,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
               value={order.note || ""}
               disabled={orderDetails.status === 3 || orderDetails.status === 2}
               onChange={(e) => setOrder({ ...order, note: e.target.value })}
+              sx={getDisabledFieldStyle(orderDetails.status === 3 || orderDetails.status === 2)}
             />
             <ProductTable products={order.items} />
             <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
@@ -315,7 +355,7 @@ const ModalContent = ({ onClose, orderDetails, refetch, refetchOrder }) => {
                   </span>
                 </Typography>
                 <Typography variant="h6" textAlign={"right"} fontWeight={500}>
-                  Tax (10%):{" "}
+                  Thuế (10%):{" "}
                   <span style={{ marginLeft: "40px" }}>
                     {formatPrice(Math.floor(caculateTotal() * 0.1))} VNĐ
                   </span>

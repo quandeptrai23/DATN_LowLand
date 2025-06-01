@@ -7,15 +7,15 @@ const ChangePasswordTab = ({ editData, setEditData, disable, onSubmit }) => {
       <Grid item xs={12}>
         <Card sx={{ p: 3 }}>
           <Typography variant="h6" fontWeight="medium" gutterBottom>
-            Change Password
+            Thay đổi mật khẩu{" "}
           </Typography>
           <Typography variant="body2" color="textSecondary" gutterBottom>
-            Please fill out the following fields to change your password.
+            Vui lòng điền vào các trường sau để thay đổi mật khẩu của bạn.
           </Typography>
           <Box sx={{ mt: 3 }}>
             <TextField
               fullWidth
-              label="New Password"
+              label="Mật khẩu mới"
               type="password"
               name="newPassword"
               value={editData?.password ? editData.password : ""}
@@ -27,7 +27,7 @@ const ChangePasswordTab = ({ editData, setEditData, disable, onSubmit }) => {
             />
             <TextField
               fullWidth
-              label="Confirm Password"
+              label="Xác nhận"
               type="password"
               name="confirmPassword"
               value={editData?.confirmPassword ? editData.confirmPassword : ""}
@@ -40,7 +40,7 @@ const ChangePasswordTab = ({ editData, setEditData, disable, onSubmit }) => {
               error={editData?.password !== editData?.confirmPassword}
               helperText={
                 editData?.password !== editData?.confirmPassword
-                  ? "Passwords do not match"
+                  ? "Mật khẩu không khớp"
                   : ""
               }
               autoComplete="confirm-password"
@@ -56,7 +56,7 @@ const ChangePasswordTab = ({ editData, setEditData, disable, onSubmit }) => {
               }
               onClick={onSubmit}
             >
-              Change Password
+              Thay đổi mật khẩu{" "}
             </Button>
           </Box>
         </Card>

@@ -105,7 +105,7 @@ const ProductTypeAutocomplete = ({ currentType, setProductData }) => {
         renderInput={(params) => (
           <TextField
             {...params}
-            label="Product types"
+            label="Loại sản phẩm"
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             InputProps={{
@@ -327,7 +327,7 @@ const ProductDetails = ({ productData, setProductData, files, setFiles }) => {
                 }}
                 onChange={handleFileChange}
               />
-              <Typography variant="body2">Upload Image</Typography>
+              <Typography variant="body2">Thêm ảnh</Typography>
             </Box>
           </SwiperSlide>
         </Swiper>
@@ -335,7 +335,7 @@ const ProductDetails = ({ productData, setProductData, files, setFiles }) => {
 
       <Box>
         <TextField
-          label="Product Name"
+          label="Tên sản phẩm"
           value={productData.productName || ""}
           onChange={(e) =>
             setProductData({ ...productData, productName: e.target.value })
@@ -350,12 +350,12 @@ const ProductDetails = ({ productData, setProductData, files, setFiles }) => {
         />
 
         <FormControl fullWidth sx={{ my: 2 }}>
-          <InputLabel id="demo-simple-select-label">Active</InputLabel>
+          <InputLabel id="demo-simple-select-label">Trạng thái</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             value={productData?.isActive ? 1 : 0}
             name="isActive"
-            label="Active"
+            label="Cho phép"
             autoComplete="isActive"
             onChange={(e) => {
               setProductData((prev) => ({
@@ -370,7 +370,7 @@ const ProductDetails = ({ productData, setProductData, files, setFiles }) => {
                   icon="teenyicons:tick-circle-solid"
                   sx={{ color: "green", mr: 1 }}
                 />
-                Active
+                Cho phép
               </Typography>
             </MenuItem>
             <MenuItem value={0} sx={{ display: "flex", alignItems: "center" }}>
@@ -379,14 +379,14 @@ const ProductDetails = ({ productData, setProductData, files, setFiles }) => {
                   icon="zondicons:close-solid"
                   sx={{ color: "#ba1f1d", mr: 1 }}
                 />
-                Inactive
+                Không cho phép
               </Typography>
             </MenuItem>
           </Select>
         </FormControl>
 
         <TextField
-          label="Description"
+          label="Chi tiết thông tin"
           value={productData?.description || ""}
           onChange={(e) =>
             setProductData({ ...productData, description: e.target.value })

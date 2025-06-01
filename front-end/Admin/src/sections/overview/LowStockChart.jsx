@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Chart from "src/components/chart";
 import { useQuery } from "@tanstack/react-query";
 import materialAPI from "src/services/API/materialAPI";
@@ -17,7 +17,6 @@ const LowStockChart = () => {
   if (!lowStockMaterials?.length) return null;
 
   const lowStockChart = {
-    title: "Nguyên liệu dưới mức cảnh báo",
     labels: lowStockMaterials.map((m) => m.materialName),
     series: [
       {
@@ -31,6 +30,7 @@ const LowStockChart = () => {
 
   return (
     <Box mt={5}>
+      <Typography variant="h4"> Nguyên liệu dưới mức cảnh báo</Typography>
       <Chart
         dir="ltr"
         type="bar"

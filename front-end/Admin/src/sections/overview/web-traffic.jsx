@@ -53,17 +53,18 @@ const WebTraffic = () => {
         year: yearAccess,
       }),
   });
+
   return (
     <Stack sx={{ mt: 5 }}>
       <Box sx={{ display: "flex", gap: 2, mb: 5 }}>
         <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel>Month</InputLabel>
+          <InputLabel>Tháng</InputLabel>
           <Select
             value={monthAccess}
             onChange={(e) => setMonthAccess(e.target.value)}
           >
             <MenuItem key={"unset"} value={-1}>
-              Unset
+              Bỏ cài đặt
             </MenuItem>
             {[...Array(12).keys()].map((index) => (
               <MenuItem key={index + 1} value={(index + 1).toString()}>
@@ -73,7 +74,7 @@ const WebTraffic = () => {
           </Select>
         </FormControl>
         <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel>Year</InputLabel>
+          <InputLabel>Năm</InputLabel>
           <Select
             value={yearAccess}
             onChange={(e) => setYearAccess(e.target.value)}
@@ -99,7 +100,13 @@ const WebTraffic = () => {
             unit="khách"
             chart={{
               labels: totalAccessHistories.map((item) =>
-                item.date ? item.date.toString() : "N/A"
+                item.date
+                  ? new Intl.DateTimeFormat("vi-VN", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    }).format(new Date(item.date))
+                  : "N/A"
               ),
               series: [
                 {
@@ -124,7 +131,7 @@ const WebTraffic = () => {
       >
         <Box sx={{ mb: 2 }}>
           <TextField
-            label="Search access"
+            label="Tìm kiếm truy cập"
             value={accessQuery}
             onChange={(e) => setAccessQuery(e.target.value)}
           />
@@ -147,14 +154,15 @@ const WebTraffic = () => {
           {accessHistoriesPage ? (
             <>
               {accessHistoriesPage.response.map((item) => {
+                const dateFormatted = new Intl.DateTimeFormat("vi-VN", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                }).format(new Date(item.date));
+
                 return (
                   <Card key={item.id} raised sx={{ my: 1, p: 2 }}>
-                    <Typography>
-                      {" "}
-                      {new Date(item.date).toDateString() +
-                        " " +
-                        new Date(item.date).toLocaleTimeString()}
-                    </Typography>
+                    <Typography>{dateFormatted}</Typography>
                     <Typography color={"error"}>{item.user}</Typography>
                     <Typography sx={{ fontWeight: 600 }}>
                       IP: {item.ip}

@@ -129,8 +129,8 @@ const UserInfo = () => {
         <TabContext value={tab}>
           <Box>
             <TabList onChange={(e, v) => setTab(v)} aria-label="user tabs">
-              <Tab label="User info" value={"1"} />
-              <Tab label="Change password" value={"2"} />
+              <Tab label="Thông tin" value={"1"} />
+              <Tab label="Đổi mật khẩu" value={"2"} />
             </TabList>
           </Box>
           <TabPanel
@@ -191,21 +191,21 @@ const UserInfo = () => {
           >
             <TextField
               sx={{ m: 2, width: "100%" }}
-              label="New password"
+              label="Mật khẩu mới"
               value={password || ""}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
             />
             <TextField
               sx={{ m: 2, width: "100%" }}
-              label="Confirm password"
+              label="Xác nhận mật khẩu"
               value={confirmPassword || ""}
               onChange={(e) => setConfirmPassword(e.target.value)}
               type="password"
               error={Boolean(password) && password !== confirmPassword}
               helperText={
                 password && password !== confirmPassword
-                  ? "Passwords do not match"
+                  ? "Mật khẩu không khớp"
                   : ""
               }
             />
