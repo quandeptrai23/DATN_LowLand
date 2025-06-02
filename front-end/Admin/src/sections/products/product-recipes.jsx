@@ -19,6 +19,46 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
     unitName: "",
   });
 
+  // Key để force re-render CustomAutocomplete khi cần reset
+  const [autocompleteKey, setAutocompleteKey] = useState(0);
+
+  // Hàm lọc materials cho việc edit
+  const getFilteredMaterialsForEdit = async (currentMaterial) => {
+    try {
+      const allMaterials = await queryFn();
+      const selectedMaterialNames = recipes
+        .filter((r) => r.materialName !== currentMaterial.materialName) // So sánh bằng materialName thay vì productRecipeId
+        .map((r) => r.materialName)
+        .filter(Boolean); // Loại bỏ các giá trị null/undefined
+
+      const filtered = allMaterials.filter(
+        (m) => !selectedMaterialNames.includes(m.materialName)
+      );
+      
+      return filtered;
+    } catch (error) {
+      return await queryFn(); // Fallback về danh sách đầy đủ nếu có lỗi
+    }
+  };
+
+  // Hàm lọc materials cho việc thêm mới
+  const getFilteredMaterialsForNew = async () => {
+    try {
+      const allMaterials = await queryFn();
+      const selectedMaterialNames = recipes
+        .map((r) => r.materialName)
+        .filter(Boolean); // Loại bỏ các giá trị null/undefined
+
+      const filtered = allMaterials.filter(
+        (m) => !selectedMaterialNames.includes(m.materialName)
+      );
+      
+      return filtered;
+    } catch (error) {
+      return await queryFn(); // Fallback về danh sách đầy đủ nếu có lỗi
+    }
+  };
+
   const handleAdd = () => {
     if (newRecipe.materialName && newRecipe.quantity && newRecipe.unitName) {
       if (
@@ -30,11 +70,13 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
           quantity: "",
           unitName: "",
         });
+        // Force re-render CustomAutocomplete để reset state
+        setAutocompleteKey(prev => prev + 1);
       } else {
-        toast.error("Material already exists");
+        toast.error("Nguyên liệu đã có");
       }
     } else {
-      toast.error("Please fill all fields");
+      toast.error("Hãy nhập đủ các trường");
     }
   };
 
@@ -51,16 +93,17 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
     });
     toast.success("Xóa nguyên liệu thành công");
   };
+
   return (
     <Box sx={{ overflowY: "auto", overflowX: "hidden", mt: 2 }}>
       <Typography fontWeight={700} sx={{ ml: 2, mb: 1 }}>
         Danh sách nguyên liệu:
       </Typography>
       <Box sx={{ m: 2 }}>
-        {recipes?.map((material) => (
+        {recipes?.map((material, index) => (
           <Grid
             container
-            key={`${material.materialName}${material?.productRecipeId}`}
+            key={`${material.materialName}-${index}`} // Sử dụng index để đảm bảo unique key
             gap={2}
             sx={{
               mb: 6,
@@ -69,14 +112,14 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
             <Grid item xs={12} md={5} sx={{ width: "100%" }}>
               <CustomAutocomplete
                 label={"Nguyên liệu"}
-                queryFn={queryFn}
+                queryFn={() => getFilteredMaterialsForEdit(material)}
                 labelKey={"materialName"}
                 sx={{ width: "100%" }}
                 current={material.materialName}
                 onInputChange={(val) => {
                   setRecipes((prev) =>
-                    prev.map((item) =>
-                      item.productRecipeId === material.productRecipeId
+                    prev.map((item, i) =>
+                      i === index // Sử dụng index thay vì productRecipeId
                         ? {
                             ...item,
                             materialName: val.value,
@@ -95,8 +138,8 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
                 fullWidth
                 onChange={(e) => {
                   setRecipes((prev) =>
-                    prev.map((item) =>
-                      item.productRecipeId === material.productRecipeId
+                    prev.map((item, i) =>
+                      i === index // Sử dụng index thay vì productRecipeId
                         ? { ...item, quantity: Number(e.target.value) }
                         : item
                     )
@@ -125,18 +168,20 @@ const ProductRecipes = ({ recipes, setRecipes }) => {
           </Grid>
         ))}
 
+        {/* Form thêm mới */}
         <Grid container gap={2}>
           <Grid item sm={12} md={5} sx={{ width: "100%" }}>
             <CustomAutocomplete
+              key={`new-recipe-${autocompleteKey}`} // Key để force re-render
               label={"Nguyên liệu"}
-              queryFn={queryFn}
+              queryFn={getFilteredMaterialsForNew}
               labelKey={"materialName"}
               sx={{ width: "100%" }}
-              current={newRecipe.materialName}
+              current={newRecipe.materialName ? { materialName: newRecipe.materialName } : null} // Đảm bảo truyền đúng format
               onInputChange={(val) => {
                 setNewRecipe((prev) => ({
                   ...prev,
-                  materialName: val.value,
+                  materialName: val.value || "",
                   unitName: val.option?.unitName || "",
                 }));
               }}
